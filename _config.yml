@@ -3,7 +3,7 @@
 title: "Bro Qiang 博客"
 header-img: img/home-bg.jpg
 email: broqiang@qq.com
-# url: "http://127.0.0.1"
+url: "https://broqiang.com"
 description: "Bro Qiang 个人博客"
 github_username:  BroQiang
 zhihu_username: bro-qiang
@@ -50,10 +50,10 @@ excerpt_separator: "\n\n"
 incremental: false
 
 # Serving
-detach:  false
-port:    4000
-host:    127.0.0.1
-baseurl: "" # does not include hostname
+# detach:  false
+# port:    4000
+# host:    127.0.0.1
+# baseurl: "" # does not include hostname
 
 # Outputting
 permalink: pretty
