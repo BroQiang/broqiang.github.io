@@ -1,4 +1,28 @@
-# VMware Workstation 虚拟机安装
+---
+layout: post
+title: 'VMWare 虚拟机安装'
+date: '2017-04-15'
+header-img: "img/post-bg-unix.jpg"
+tags:
+     - OS
+     - VMWare
+author: 'Bro Qiang'
+---
+
+## VMware Workstation 虚拟机安装
+
+## 虚拟机软件介绍
+
+* [ VMWare Workstation](http://www.vmware.com/cn/products/workstation/workstation-evaluation.html) 
+    个人认为最强大的，不过要收费，可以试用，可以…… . 支持Windows和Linux
+
+    此处就是以此软件进行讲解
+
+* [Oracle VM VirtualBox](https://www.virtualbox.org/) 
+    开源产品，支持Windows/Linux/Mac OS X
+
+* 还有一些，比如KVM/Hyper-V等，其他产品没有使用过，在此就不提了
+
 
 [VMware 官网](http://www.vmware.com/cn.html)
 

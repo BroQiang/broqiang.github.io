@@ -1,4 +1,16 @@
-# Ubuntu 16.10 安装
+---
+layout: post
+title: 'Ubuntu 16.10 安装'
+date: '2017-04-15'
+header-img: "img/post-bg-unix.jpg"
+tags:
+     - OS
+     - Ubuntu
+     - Linux
+author: 'Bro Qiang'
+---
+
+## Ubuntu 16.10 安装
 
 前面章节已经介绍了VMware虚拟机创建和U盘启动盘制作，如不清楚可以查看前面章节
 

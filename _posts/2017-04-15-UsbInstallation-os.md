@@ -1,4 +1,16 @@
-# Usb 系统安装启动盘制作
+---
+layout: post
+title: 'Ubuntu 16.10 USB 引导盘制作'
+date: '2017-04-15'
+header-img: "img/post-bg-unix.jpg"
+tags:
+     - OS
+     - Ubuntu
+     - Linux
+author: 'Bro Qiang'
+---
+
+## Usb 系统安装启动盘制作
 
 ## 获取镜像
 

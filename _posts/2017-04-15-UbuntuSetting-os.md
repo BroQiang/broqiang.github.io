@@ -1,4 +1,16 @@
-# 安装后的系统设置
+---
+layout: post
+title: 'Ubuntu 16.10 安装后的设置'
+date: '2017-04-15'
+header-img: "img/post-bg-unix.jpg"
+tags:
+     - OS
+     - Ubuntu
+     - Linux
+author: 'Bro Qiang'
+---
+
+## 安装后的系统设置
 
 ## 基本操作
 
