@@ -9,7 +9,7 @@ github_username:  BroQiang
 zhihu_username: bro-qiang
 
 date-format: "%Y-%m-%d"
-# cloud_tie_public_key: "\"7a06774f1f184badbb64d9af7c3d5c2c\""
+cloud_tie_public_key: "\"6ad9793760a34bba8ff5edeaad38ffeb\""
 ##########################上述信息需要您修改,cloud_tie_public_key两侧必须有引号############################
 
 
