@@ -54,6 +54,38 @@ $sudo dpki -i sublime-text_build*
 
     配置文件中加入`"font_face": "Roboto Mono",`
 
+### 安装配置主题
+
+- 通过包控制器安装 `Material Theme`
+
+- 修改左侧目录树和Tab字体大小
+
+    - 安装 `PackageResourceViewer`
+
+    - 通过 `PackageResourceViewer` 生成模板配置文件
+
+        输入 `PackageResourceVIewer: Extract Package`
+
+        输入模板名称（根据使用的去查找) `Material Theme`
+    - 编辑模板配置文件
+
+        - 在终端输入  `$ subl .config/sublime-text-3/Packages/Material\ Theme/Material-Theme.sublime-theme`
+
+            subl是sublime文本编辑器的命令，也可以用vim gedit等，看使用习惯
+
+        - 修改Tab标签字体大小
+
+            在359行（根据实际情况，可以搜索`// Tab Labels`找到）
+
+            将`"font.size": 11`改成想要的大小，如`"font.size": 12,`
+
+        - 修改左侧目录树
+
+            查找`sidebar_label`,有很多个，找到的最上面的一个（第一个）
+
+            在找到行下面加入`"font.size": 14,` 字体大小看个人喜好配置
+            
+
 ### 配置文件备份
 
 此配置是我当前正在使用的,留作备份,下次安装的时候可以快速恢复
