@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'Sublime 插件列表'
-date: '2017-02-01'
+date: '2017-02-02'
 header-img: "img/post-bg-unix.jpg"
 tags:
      - Editor
@@ -17,19 +17,37 @@ author: 'Bro Qiang'
 
 - DocBlockr - 自动注释成功工具
 
-- AdvancedNewFile - 非常方便的快速创建文件插件
+    配置
+
+    ```json
+    {
+        "jsdocs_extra_tags":["@Author:  Bro Qiang   <broqiang@qq.com>","@DateTime {{datetime}}"],
+    }
+    ```
+
+- AdvancedNewFile - 非常方便的快速创建文件插件 - 快捷键 `Super+Alt+n`
 
 - PHP Companion - php伴侣, 可以自动引入PHP命名空间等
 
-- CodeFormatter - 代码格式化工具,可以很好的格式化 PHP 代码,也支持JS Css等,不过效果不好
+    配置快捷键
 
-- HTML-CSS-JS Prettify - 可以很好的格式化Html js css,需要Node.js支持
+    ```json
+    [
+        { "keys": ["f9"], "command": "expand_fqcn" }, //自动补全命名空间
+        { "keys": ["f8"], "command": "find_use" }, //自动寻找命名空间
+        { "keys": ["f7"], "command": "insert_php_constructor_property" }, //自动生产构造函数
+    ]
+    ```
 
-- Inputer3 Linux - 下输入中文的解决方案, 在线没有 [Github地址](https://github.com/lanky228/Inputer3)
+- CodeFormatter - 代码格式化工具,可以很好的格式化 PHP 代码,也支持JS Css等,不过效果不好 - 快捷键 `Ctrl+Alt+F`
+
+- HTML-CSS-JS Prettify - 可以很好的格式化Html js css,需要Node.js支持 - 快捷键 `Ctrl+Shift+H`
+
+- Inputer3 Linux - 下输入中文的解决方案, 在线没有 [Github地址](https://github.com/lanky228/Inputer3) - 快捷键 `Ctrl+空格`
 
 - Emment - 高效编写HTML的工具，原zen-coding
 
-- Terminal - 调用终端,使用起来很方便,可以直接显示当前文件目录,这个比较方便,避免切换目录浪费时间
+- Terminal - 调用终端,使用起来很方便,可以直接显示当前文件目录,这个比较方便,避免切换目录浪费时间  - 快捷键 `Ctrl+Shift+t`
 
 - SideBarEnhancements - 左侧菜单增强工具,功能很强大,不过个人不喜欢,一下多了很多,感觉有点乱
 
