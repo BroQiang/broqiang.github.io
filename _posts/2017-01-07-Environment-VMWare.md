@@ -5,7 +5,6 @@ date: '2017-01-07'
 header-img: "img/post-bg-unix.jpg"
 tags:
     - Environment
-    - VMWare
 author: 'Bro Qiang'
 ---
 
