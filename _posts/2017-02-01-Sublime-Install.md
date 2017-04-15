@@ -54,5 +54,34 @@ $sudo dpki -i sublime-text_build*
 
     配置文件中加入`"font_face": "Roboto Mono",`
 
+### 配置文件备份
+
+此配置是我当前正在使用的,留作备份,下次安装的时候可以快速恢复
+
+```json
+{
+    "color_scheme": "Packages/Material Theme/schemes/Material-Theme.tmTheme",
+    "expand_tabs_on_save": true,
+    "font_face": "Roboto Mono",
+    "font_size": 12,
+    "ignored_packages":
+    [
+        "Vintage"
+    ],
+    "line_padding_bottom": 6,
+    "line_padding_top": 6,
+    "marin": 0,
+    "material_theme_accent_cyan": true,
+    "material_theme_big_fileicons": true,
+    "material_theme_bold_tab": true,
+    "material_theme_bright_scrollbars": true,
+    "material_theme_small_statusbar": true,
+    "material_theme_small_tab": true,
+    "tab_size": 4,
+    "theme": "Material-Theme.sublime-theme",
+    "translate_tabs_to_spaces": true
+}
+
+```
 
 
