@@ -25,7 +25,7 @@ author: 'Bro Qiang'
 
 - HTML-CSS-JS Prettify - 可以很好的格式化Html js css,需要Node.js支持
 
-- Inputer3 Linux - 下输入中文的解决方案, 在线没有 ![Github地址](https://github.com/lanky228/Inputer3)
+- Inputer3 Linux - 下输入中文的解决方案, 在线没有 [Github地址](https://github.com/lanky228/Inputer3)
 
 - Emment - 高效编写HTML的工具，原zen-coding
 
