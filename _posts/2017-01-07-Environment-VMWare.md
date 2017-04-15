@@ -4,9 +4,8 @@ title: 'VMWare 虚拟机安装'
 date: '2017-01-07'
 header-img: "img/post-bg-unix.jpg"
 tags:
-     - Environment
-     - Virtualization
-     - VMWare
+    - Environment
+    - VMWare
 author: 'Bro Qiang'
 ---
 

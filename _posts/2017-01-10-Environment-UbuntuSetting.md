@@ -1,10 +1,10 @@
 ---
 layout: post
 title: 'Ubuntu 16.10 安装后的设置'
-date: '2017-04-15'
+date: '2017-01-10'
 header-img: "img/post-bg-unix.jpg"
 tags:
-     - OS
+     - Environment
      - Ubuntu
      - Linux
 author: 'Bro Qiang'

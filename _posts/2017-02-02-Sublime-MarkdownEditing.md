@@ -1,10 +1,10 @@
 ---
 layout: post
 title: 'Sublime Markdown Editing 插件配置'
-date: '2017-04-15'
+date: '2017-02-02'
 header-img: "img/post-bg-unix.jpg"
 tags:
-     - Sublime
+    - Sublime
 author: 'Bro Qiang'
 ---
 

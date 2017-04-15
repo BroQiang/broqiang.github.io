@@ -1,12 +1,12 @@
 ---
 layout: post
 title: 'Ubuntu 16.10 安装'
-date: '2017-04-15'
+date: '2017-01-09'
 header-img: "img/post-bg-unix.jpg"
 tags:
-     - OS
-     - Ubuntu
-     - Linux
+    - Environment
+    - Ubuntu
+    - Linux
 author: 'Bro Qiang'
 ---
 

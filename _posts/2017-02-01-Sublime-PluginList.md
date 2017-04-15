@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'Sublime 插件列表'
-date: '2017-04-15'
+date: '2017-02-01'
 header-img: "img/post-bg-unix.jpg"
 tags:
      - Editor

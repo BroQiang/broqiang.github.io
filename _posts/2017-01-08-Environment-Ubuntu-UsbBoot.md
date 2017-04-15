@@ -1,12 +1,12 @@
 ---
 layout: post
 title: 'Ubuntu 16.10 USB 引导盘制作'
-date: '2017-04-15'
+date: '2017-01-08'
 header-img: "img/post-bg-unix.jpg"
 tags:
-     - OS
-     - Ubuntu
-     - Linux
+    - Environment
+    - Ubuntu
+    - Linux
 author: 'Bro Qiang'
 ---
 
