@@ -4,6 +4,7 @@ title: 'Sublime Markdown Editing 插件配置'
 date: '2017-02-03'
 header-img: "img/post-bg-unix.jpg"
 tags:
+    - Editor
     - Sublime
 author: 'Bro Qiang'
 ---
