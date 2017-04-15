@@ -33,3 +33,25 @@ author: 'Bro Qiang'
 }
     
 ```
+
+### 为生成 jekyll 头创建snippet
+
+```
+<snippet>
+    <content><![CDATA[
+---
+layout: post
+title: '${1:标题}'
+date: '2017-${2:01-07}'
+header-img: "img/post-bg-unix.jpg"
+tags:
+     - ${3:PHP}
+author: 'Bro Qiang'
+---
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>layout</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>text.html.markdown</scope>
+</snippet>
+```

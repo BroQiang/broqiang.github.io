@@ -1,13 +1,15 @@
 ---
 layout: post
 title: 'VMWare 虚拟机安装'
-date: '2017-04-15'
+date: '2017-01-07'
 header-img: "img/post-bg-unix.jpg"
 tags:
-     - OS
+     - Environment
+     - Virtualization
      - VMWare
 author: 'Bro Qiang'
 ---
+
 
 ## VMware Workstation 虚拟机安装
 
@@ -56,12 +58,9 @@ author: 'Bro Qiang'
 
 - 选择Custom，点击下一步
 
-    ![选择配置](https://broqiang.github.io/StudyNotes/Images/Environment/OS/select_configuration.png)
-
 - 选择虚拟机版本，默认即可，下一步
 
-- 选择安装镜像，暂时先不选，（选择也没关系，这个随时可以更改）选择稍后安装操作系统，如图
-    ![稍后安装](https://broqiang.github.io/StudyNotes/Images/Environment/OS/select_install.png)
+- 选择安装镜像，暂时先不选，（选择也没关系，这个随时可以更改）选择稍后安装操作系统
 
 - 选择客户机操作系统
 
