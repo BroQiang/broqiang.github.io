@@ -13,6 +13,8 @@ author: 'Bro Qiang'
 标题定义成这个,就是因为此处记录的函数是平时不会经常用到
 在特定 (比如开发框架) 的时候又非常有用, 需要了解, 至少知道有这个函数
 
+---
+
 ### [string set_include_path ( string $new_include_path )](http://php.net/manual/zh/function.set-include-path.php) 
 
 为当前脚本设置 include_path 运行时的配置选项
@@ -21,12 +23,15 @@ author: 'Bro Qiang'
 
 - 返回值 - 成功时返回旧的 include_path 或者在失败时返回 FALSE
 
+---
 
 ### [string get_include_path ()](http://php.net/manual/zh/function.get-include-path.php)
 
 获取当前 include_path 配置选项的值
 
 - 返回值 - 返回路径的字符串
+
+---
 
 ### [bool define ( string $name , mixed $value [, bool $case_insensitive = false ] )](http://php.net/manual/zh/function.define.php)
 
@@ -38,7 +43,39 @@ author: 'Bro Qiang'
     - case_insensitive - 如果设置为 TRUE，该常量则大小写不敏感。默认是大小写敏感的,大小写不敏感的常量以小写的方式储存
     
 - 返回值 - 成功时返回 TRUE， 或者在失败时返回 FALSE
-    
+
+---
+
+### [bool defined ( string $name )](http://php.net/manual/zh/function.defined.php)
+
+检查某个名称的常量是否存在
+
+- 参数 - name 常量的名称
+
+- 返回值 - 如果名称 name 的常量已定义,返回 TRUE,未定义则返回 FALSE
+
+---
+
+### [string dirname ( string $path )](http://php.net/manual/zh/function.dirname.php)
+
+给出一个包含有指向一个文件的全路径的字符串，本函数返回去掉文件名后的目录名
+
+- 参数 - path 一个路径
+
+- 返回值 - 返回 path 的父目录。 如果在 path 中没有斜线，则返回一个点（'.'），表示当前目录
+
+---
+
+### [string dirname ( string $path )](http://php.net/manual/zh/function.dirname.php)
+
+给出一个包含有指向一个文件的全路径的字符串，本函数返回去掉文件名后的目录名
+
+- 参数 - path 一个路径
+
+- 返回值 - 返回 path 的父目录。 如果在 path 中没有斜线，则返回一个点（'.'），表示当前目录
+
+---
+
 
         
 
