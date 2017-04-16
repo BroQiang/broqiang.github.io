@@ -11,7 +11,7 @@ author: 'Bro Qiang'
 ## Ubuntu apt 方式安装 Nginx
 
 ```shell
-$ sudo apt install -y ngninx
+$ sudo apt install -y nginx
 ```
 
 ### 启动/停止服务
