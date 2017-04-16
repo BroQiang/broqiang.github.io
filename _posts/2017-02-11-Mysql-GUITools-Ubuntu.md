@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'Ubuntu 下 Mysql 图形客户端'
-date: '2017-02-12'
+date: '2017-02-11'
 header-img: "img/post-bg-unix.jpg"
 tags:
     - Mysql
