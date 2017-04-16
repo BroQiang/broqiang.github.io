@@ -13,7 +13,7 @@ author: 'Bro Qiang'
 标题定义成这个,就是因为此处记录的函数是平时不会经常用到
 在特定 (比如开发框架) 的时候又非常有用, 需要了解, 至少知道有这个函数
 
-#### [string set_include_path ( string $new_include_path )](http://php.net/manual/zh/function.set-include-path.php) 
+### [string set_include_path ( string $new_include_path )](http://php.net/manual/zh/function.set-include-path.php) 
 
 为当前脚本设置 include_path 运行时的配置选项
 
@@ -22,9 +22,24 @@ author: 'Bro Qiang'
 - 返回值 - 成功时返回旧的 include_path 或者在失败时返回 FALSE
 
 
-#### [string get_include_path ()](http://php.net/manual/zh/function.get-include-path.php)
+### [string get_include_path ()](http://php.net/manual/zh/function.get-include-path.php)
 
 获取当前 include_path 配置选项的值
 
 - 返回值 - 返回路径的字符串
+
+### [bool define ( string $name , mixed $value [, bool $case_insensitive = false ] )](http://php.net/manual/zh/function.define.php)
+
+定义一个常量
+
+- 参数
+    - name - 常量名    
+    - value - 常量的值
+    - case_insensitive - 如果设置为 TRUE，该常量则大小写不敏感。默认是大小写敏感的,大小写不敏感的常量以小写的方式储存
+    
+- 返回值 - 成功时返回 TRUE， 或者在失败时返回 FALSE
+    
+
+        
+
 
