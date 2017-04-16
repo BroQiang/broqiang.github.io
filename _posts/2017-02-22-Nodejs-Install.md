@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'Linux 安装 Node.js'
-date: '2017-02-21'
+date: '2017-02-22'
 header-img: "img/post-bg-unix.jpg"
 tags:
     - Nodejs
