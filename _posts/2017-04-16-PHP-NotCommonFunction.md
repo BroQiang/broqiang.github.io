@@ -46,7 +46,7 @@ author: 'Bro Qiang'
 
 ---
 
-### [](http://php.net/manual/zh/function.defined.php) - 检查某个名称的常量是否存在
+### [defined](http://php.net/manual/zh/function.defined.php) - 检查某个名称的常量是否存在
 
 - 语法 - bool defined ( string $name )
 
