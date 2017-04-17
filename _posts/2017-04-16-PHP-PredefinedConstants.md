@@ -44,6 +44,8 @@ PHP 核心代码定义的常量
 
 ### 魔术常量
 
+[官方文档](http://php.net/manual/zh/language.constants.predefined.php)
+
 - __LINE__ - 文件中的当前行号。
 
 - __FILE__ - 文件的完整路径和文件名。如果用在被包含文件中，则返回被包含的文件名。

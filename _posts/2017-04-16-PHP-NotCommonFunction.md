@@ -15,9 +15,9 @@ author: 'Bro Qiang'
 
 ---
 
-### [string set_include_path ( string $new_include_path )](http://php.net/manual/zh/function.set-include-path.php) 
+### [set_include_path](http://php.net/manual/zh/function.set-include-path.php) - 为当前脚本设置 include_path 运行时的配置选项
 
-为当前脚本设置 include_path 运行时的配置选项
+- 语法 - string set_include_path ( string $new_include_path )
 
 - 参数 - include_path 新的值, 一般 `get_include_path() . PATH_SEPARATOR . $new_include_path` 这样用
 
@@ -25,17 +25,17 @@ author: 'Bro Qiang'
 
 ---
 
-### [string get_include_path ()](http://php.net/manual/zh/function.get-include-path.php)
+### [get_include_path](http://php.net/manual/zh/function.get-include-path.php) - 获取当前 include_path 配置选项的值
 
-获取当前 include_path 配置选项的值
+- 语法 - string get_include_path ()
 
 - 返回值 - 返回路径的字符串
 
 ---
 
-### [bool define ( string $name , mixed $value [, bool $case_insensitive = false ] )](http://php.net/manual/zh/function.define.php)
+### [define](http://php.net/manual/zh/function.define.php) - 定义一个常量
 
-定义一个常量
+- 语法 - bool define ( string $name , mixed $value [, bool $case_insensitive = false ] )
 
 - 参数
     - name - 常量名    
@@ -46,9 +46,9 @@ author: 'Bro Qiang'
 
 ---
 
-### [bool defined ( string $name )](http://php.net/manual/zh/function.defined.php)
+### [](http://php.net/manual/zh/function.defined.php) - 检查某个名称的常量是否存在
 
-检查某个名称的常量是否存在
+- 语法 - bool defined ( string $name )
 
 - 参数 - name 常量的名称
 
@@ -56,9 +56,11 @@ author: 'Bro Qiang'
 
 ---
 
-### [string dirname ( string $path )](http://php.net/manual/zh/function.dirname.php)
+### [dirname](http://php.net/manual/zh/function.dirname.php)
 
 给出一个包含有指向一个文件的全路径的字符串，本函数返回去掉文件名后的目录名
+
+- 语法 - string dirname ( string $path )
 
 - 参数 - path 一个路径
 
@@ -66,9 +68,11 @@ author: 'Bro Qiang'
 
 ---
 
-### [string dirname ( string $path )](http://php.net/manual/zh/function.dirname.php)
+### [dirname](http://php.net/manual/zh/function.dirname.php)
 
 给出一个包含有指向一个文件的全路径的字符串，本函数返回去掉文件名后的目录名
+
+- 语法 - string dirname ( string $path )
 
 - 参数 - path 一个路径
 
