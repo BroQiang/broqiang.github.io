@@ -56,9 +56,7 @@ author: 'Bro Qiang'
 
 ---
 
-### [dirname](http://php.net/manual/zh/function.dirname.php)
-
-给出一个包含有指向一个文件的全路径的字符串，本函数返回去掉文件名后的目录名
+### [dirname](http://php.net/manual/zh/function.dirname.php) - 给出一个包含有指向一个文件的全路径的字符串，本函数返回去掉文件名后的目录名
 
 - 语法 - string dirname ( string $path )
 
@@ -68,9 +66,7 @@ author: 'Bro Qiang'
 
 ---
 
-### [dirname](http://php.net/manual/zh/function.dirname.php)
-
-给出一个包含有指向一个文件的全路径的字符串，本函数返回去掉文件名后的目录名
+### [dirname](http://php.net/manual/zh/function.dirname.php) - 给出一个包含有指向一个文件的全路径的字符串，本函数返回去掉文件名后的目录名
 
 - 语法 - string dirname ( string $path )
 
