@@ -143,4 +143,3 @@ $ php -S localhost:8888
 看一下常用的PHP扩展是否安装成功, 比如 pdo_mysql,mysqli,gd(同时要看里面包含的图片格式),libxml,mbstring,curl,openssl等
 
 太多了,直接去看phpinfo输出结果查看
-
