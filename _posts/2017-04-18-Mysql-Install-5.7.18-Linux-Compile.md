@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Ubuntu 16.10 编译安装 Mysql5.7'
+title: 'Linux 编译安装 Mysql5.7.18'
 date: '2017-04-18'
 header-img: "img/post-bg-unix.jpg"
 tags:
@@ -8,13 +8,18 @@ tags:
 author: 'Bro Qiang'
 ---
 
-## Ubuntu 16.10 编译安装 Mysql5.7
+## Linux 编译安装 Mysql5.7.18
 
 Ubuntu 下快速安装直接 apt 方式即可, 一般的开发环境也足够了
 
 个人比较喜欢新版本,一般有新版本就会尝试一下
 
-此文档也使用CentOS,只是依赖关系部分不同,其他全部相同, 依赖部分写了,不过注释了
+此文档适用于 Ubuntu 16.10 和 CentOS 7 , 其他版本操作系统未测试
+
+此文档是在Ubuntu 16.10 环境下写的, 理论上 CentOS 7 除了依赖关系不同, 其他步骤相同即可
+
+以后在 CentOS 7 上安装时如遇到不同处会再进行修改,如参考此文档遇到问题也可以留言
+
 
 ### 安装前准备
 
