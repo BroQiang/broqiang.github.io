@@ -10,9 +10,9 @@ tags:
 author: 'Bro Qiang'
 ---
 
-## 安装后的系统设置
+## Ubuntu 16.10 安装后的设置
 
-## 基本操作
+### 基本操作
 
 - 打开终端
 
@@ -25,7 +25,7 @@ author: 'Bro Qiang'
     点击右上角的齿轮，，此处也可以进行注销，重启，关机，设置等系统设置
 
 
-## 修改家目录下的中文目录为英文目录
+### 修改家目录下的中文目录为英文目录
 
 这个设置个人觉得有点……，用Linux基本上都会用终端命令行进行操作，目录为中文有点麻烦，要不停的切换输入法
 
@@ -49,7 +49,7 @@ author: 'Bro Qiang'
 - 注销后再登录，还会出现更新工具，选择保留旧的名称，如果不想下次登录还会出现，选中下方的`下次不要再询问我`
 
 
-## 安装Vmware Tools
+### 安装Vmware Tools
 
 如果是物理机安装，忽略此步
 
@@ -78,13 +78,13 @@ author: 'Bro Qiang'
 
 - 重启后，发现登录系统后窗口变大，安装成功，此时就可以全屏显示了
 
-## 安装Vim
+### 安装Vim
 
 此步骤非必须，推荐安装，vim比默认的vi多了语法高亮等高级功能
 
 `$ sudo apt install -y vim`
 
-## 禁用访客用户
+### 禁用访客用户
 
 此步骤非必须，只是登录界面的时候有个guest用，个人不喜欢
 
@@ -116,7 +116,7 @@ allow-guest=false
 
 *修改完重复系统后生效*
 
-## 安装Gnome桌面
+### 安装Gnome桌面
 
 此步骤非必须，如果喜欢Ubuntu的默认桌面可以忽略此步骤
 
@@ -131,7 +131,7 @@ allow-guest=false
 - 安装完成后注销系统重新登录，登录的时候选择用户名右侧的按钮，选择Gnome即可切换到Gnome桌面
 
 
-## 安装numix主题
+### 安装numix主题
 
 - 安装主题
 
@@ -145,7 +145,7 @@ allow-guest=false
 
     通过此工具选择numix主题和图标，还可以用此工具进行一些其他的桌面优化，不再详细说明
 
-## 安装google浏览器
+### 安装google浏览器
 
 做开发调试个人比较喜欢chrome浏览器，而且有的时候也需要开启多个浏览器做测试，一个Firefox也不够
 
@@ -173,7 +173,7 @@ allow-guest=false
     快捷键`Alt+F2`,输入`google-chrome`,就可以打开chrome浏览器了
 
 
-## 安装Roboto Mono(google)字体
+### 安装Roboto Mono(google)字体
 
 此步骤非必须，建议安装，后面的配置都会基于此字体，当然如果喜欢其他字体可以根据个人喜好去安装
 
@@ -185,7 +185,7 @@ allow-guest=false
 sudo unzip Roboto_Mono.zip -d /usr/share/fonts/
 ```
 
-## 安装搜狗输入法
+### 安装搜狗输入法
 
 - 到官网下载Deb包 [下载](http://pinyin.sogou.com/linux/)
 
@@ -205,7 +205,7 @@ sudo unzip Roboto_Mono.zip -d /usr/share/fonts/
 
 
 
-## 设置快捷键
+### 设置快捷键
 
 可以根据个人需要设置多个快捷键，此处简单说明下怎么设置
 
@@ -237,7 +237,7 @@ sudo unzip Roboto_Mono.zip -d /usr/share/fonts/
 
 
 
-## 修改默认sh 将dash改为bash
+### 修改默认sh 将dash改为bash
 
 此步骤非必须，只是个人习惯了bash shell的脚本语法，不修改自己写的脚本有可能会出错
 
@@ -247,7 +247,7 @@ $ sudo dpkg-reconfigure dash
 
 选择否
 
-## 禁用一般用户，如mysql/www等
+### 禁用一般用户，如mysql/www等
 
 此步骤非必须，在有需要的时候再配置，一般情况下忽略即可
 
@@ -262,3 +262,24 @@ SystemAccount=true
 ```
 
 *配置完重启系统后生效*
+
+
+### 修改终端PS1
+
+非必须，看个人喜好
+
+就是终端下面默认的显示内容,如我的,默认 Ubuntu 显示全路径，一担目录深了就看起来有点纠结
+
+想知道当前目录的时候直接 `pwd` 即可, 也没有必要实时显示
+
+
+```shell
+$ vim ~/.bashrc
+
+# 找到
+PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+# 修改成
+PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[00m\]@\[\033[01;34m\]\W\[\033[00m\]\$ '
+
+```
+
