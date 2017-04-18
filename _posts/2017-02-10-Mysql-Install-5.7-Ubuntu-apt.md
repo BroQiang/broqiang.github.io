@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Ubuntu 安装Mysql5.7'
+title: 'Ubuntu apt 安装Mysql5.7'
 date: '2017-02-10'
 header-img: "img/post-bg-unix.jpg"
 tags:
