@@ -141,3 +141,32 @@ FD032C30 AD5E7241 4EAA66ED 167D91FB
 ```
 
 
+### 配置账号
+
+安装完成后最好配置下用户和邮箱，否则commit的时候也无法提交
+
+全局配置
+
+```shell
+# 邮箱改成实际的
+$ git config --global user.email "broqiang@qq.com"
+
+# 用户名改成实际的
+$ git config --global user.name "Bro Qiang"
+
+```
+
+### 配置记住用户名密码
+
+比如提交 github ，如果不记住，每次都要输一次，个人电脑，还是记住比较方便
+
+```shell
+# 长期保存, 一般要是个人开发电脑，配置这个就行
+$ git config --global credential.helper store
+
+# 临时保存，默认15分钟
+$ git config --global credential.helper cache
+
+# 指定临时保存时间
+git config credential.helper 'cache --timeout=3600'
+```
