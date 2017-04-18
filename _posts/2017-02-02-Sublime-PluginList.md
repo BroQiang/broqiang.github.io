@@ -61,6 +61,8 @@ author: 'Bro Qiang'
 
 - SublimeLinter - 语法检测工具
 
+- SublimeLinter-php - PHP 语法检测，依赖于 SublimeLinter
+
 - StatusBarTime - 可以在状态栏显示时间, 挺有用的, 尤其是Sublime全屏开发的时候
 
 - Laravel 5 Snippets - Laravel 语法支持
