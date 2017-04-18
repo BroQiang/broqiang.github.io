@@ -190,7 +190,7 @@ $ /usr/local/mysql/bin/mysql -uroot -p
 mysql> ALTER USER root@localhost IDENTIFIED BY '1';
 
 # 如果是5.7.6以前版本是下面方式
-mysql> SET PASSWORD FOR user = PASSWORD('new_password');
+# mysql> SET PASSWORD FOR user = PASSWORD('new_password');
 
 # 测试,执行下面语句,可以查询出用户,配置正确
 mysql> select user,host from mysql.user;
