@@ -33,7 +33,7 @@ $ sudo dpkg -i atom-amd64.deb
 - CentOS/Fedora 安装
 
 ```shell
-$ wget https://atom.io/download/rpm
+$ wget https://atom.io/download/rpm -O atom.x86_64.rpm
 $ sudo rpm -ivh atom.x86_64.rpm
 # 或者
 $ sudo yum install atom.x86_64.rpm
