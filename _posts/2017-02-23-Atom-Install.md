@@ -26,7 +26,7 @@ author: 'Bro Qiang'
 - Ubuntu 安装
 
 ```shell
-$ wget https://atom.io/download/deb
+$ wget https://atom.io/download/deb -O atom-amd64.deb
 $ sudo dpkg -i atom-amd64.deb
 ```
 
@@ -158,3 +158,12 @@ $ apm install markdown-pdf
     ```
 
 
+### 更新日志
+
+- 2017-04-20
+    
+    因为官方的地址用 wget 下载完名字就叫 deb , 不影响安装
+
+    不过看起来有点莫名其妙,更改下载的时候重命名了一下, 保持和 http 方式下载的名称一致
+
+    更改 wget 下载方式 `wget https://atom.io/download/deb` 为 `wget https://atom.io/download/deb -O atom-amd64.deb`
