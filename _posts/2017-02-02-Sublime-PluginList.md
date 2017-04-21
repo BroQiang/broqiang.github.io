@@ -59,6 +59,8 @@ author: 'Bro Qiang'
 
 - MarkdownEditing - Markdown编写非常好用的一个插件
 
+- Markdown Preview - Markdown 预览插件,可以支持 Github 风格
+
 - SublimeLinter - 语法检测工具
 
 - SublimeLinter-php - PHP 语法检测，依赖于 SublimeLinter
