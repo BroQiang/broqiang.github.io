@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'Sublime Markdown 插件配置'
-date: '2017-02-03'
+date: '2017-04-21'
 header-img: "img/post-bg-unix.jpg"
 tags:
     - Editor
