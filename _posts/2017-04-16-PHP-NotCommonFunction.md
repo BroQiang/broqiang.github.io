@@ -20,33 +20,46 @@ author: 'Bro Qiang'
 
 ---
 
-### PHP 选项/信息 函数
+### PHP选项/信息
 
--- **[set_include_path](http://php.net/manual/zh/function.set-include-path.php)** - 为当前脚本设置 include_path 运行时的配置选项
+-- [set_include_path](http://php.net/manual/zh/function.set-include-path.php) - 为当前脚本设置 include_path 运行时的配置选项
 
--- **[get_include_path](http://php.net/manual/zh/function.get-include-path.php)** - 获取当前 include_path 配置选项的值
+-- [get_include_path](http://php.net/manual/zh/function.get-include-path.php) - 获取当前 include_path 配置选项的值
+
+-- [get_included_files](http://php.net/manual/zh/function.get-included-files.php) - 返回被 include 和 require 文件名的数组
+
+-- [extension_loaded](http://php.net/manual/zh/function.extension-loaded.php) - 检查一个扩展是否已经加载
+
+-- [get_loaded_extensions](http://php.net/manual/zh/function.get-loaded-extensions.php) - 返回所有编译并加载模块名的数组
+
+-- [ini_get_all](http://php.net/manual/zh/function.ini-get-all.php) - 获取所有配置选项
+
+-- [ini_get](http://php.net/manual/zh/function.ini-get.php) - 获取一个配置选项的值
+
+-- [getenv](http://php.net/manual/zh/function.getenv.php) - 获取一个环境变量的值
 
 
 
-### 杂项 函数
 
--- **[define](http://php.net/manual/zh/function.define.php)** - 定义一个常量
+### 杂项
 
--- **[defined](http://php.net/manual/zh/function.defined.php)** - 检查某个名称的常量是否存在
+-- [define](http://php.net/manual/zh/function.define.php) - 定义一个常量
+
+-- [defined](http://php.net/manual/zh/function.defined.php) - 检查某个名称的常量是否存在
 
 -- 
 
 
-### 文件系统函数
+### 文件系统
 
 -- [dirname](http://php.net/manual/zh/function.dirname.php) - 给出一个包含有指向一个文件的全路径的字符串
 
-### Session 函数
+### Session
 
 -- [session_start](http://php.net/manual/zh/function.session-start.php) - 启动新会话或者重用现有会话
 
 
-### 类/对象 函数
+### 类/对象
 
 -- [get_declared_classes](http://php.net/manual/zh/function.get-declared-classes.php) - 返回由已定义类的名字所组成的数组
 

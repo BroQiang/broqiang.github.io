@@ -59,7 +59,7 @@ $ cd /usr/local/src/php-7.1.4/
 
 # 配置 makefile
 # 需要注意,此处将 mysql 编译进来了,需要保证 Mysql 已经安装配置好
-$ sudo ./configure --prefix=/usr/local/php --with-config-file-path==/usr/local/php/etc \
+$ sudo ./configure --prefix=/usr/local/php --with-config-file-path=/usr/local/php/etc \
     --with-mysqli=/usr/local/mysql/bin/mysql_config --with-pdo-mysql=/usr/local/mysql \
     --with-mysql-sock=/tmp/mysql.sock --enable-sockets --enable-zip \
     --with-fpm-user=www --with-fpm-group=www --enable-fpm --enable-gd-native-ttf --enable-gd-jis-conv \
@@ -93,6 +93,25 @@ $ sudo systemctl enable php-fpm
 # sudo chkconfig php-fpm on
 
 ```
+
+### 配置时区
+
+> 这个还是很有必要的, 如果 php.ini 中没有配置, 程序也没有初始化, 就会出现莫名其妙的问题了
+> 
+> 养成习惯,安装完了就给他配置上即可
+ 
+根据项目实际去配置, 一般都是中国时区 `Asia/Shanghai`, [可以配置的时区](http://php.net/manual/zh/timezones.php)
+
+```shell
+$ sudo vim /usr/local/php/etc/php.ini
+
+# 将下面的
+;date.timezone = 
+# 改成
+date.timezone = Asia/Shanghai
+
+```
+
 
 ### 配置环境变量
 
