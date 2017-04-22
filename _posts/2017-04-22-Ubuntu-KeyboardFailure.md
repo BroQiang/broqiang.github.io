@@ -22,6 +22,8 @@ author: 'Bro Qiang'
 
 
 
+## 方式一
+
 ### 查找设备对应的电源选项
 
 ```shell
@@ -121,3 +123,23 @@ $ sudo systemctl enable rc-local.service
 
 ```
 
+
+## 方式二
+
+使用 Laptop Mode Tools - Linux 系统下的笔记本电源管理软件
+
+```shell
+# 安装软件
+$ sudo apt install laptop-mode-tools
+
+# 配置
+$ sudo vim /etc/laptop-mode/conf.d/runtime-pm.conf
+
+# 找到下面
+AUTOSUSPEND_TIMEOUT=2
+# 改成
+AUTOSUSPEND_TIMEOUT=-1
+
+# 不确定是否需要重启,我配置完了重启了
+$ sudo reboot
+```
