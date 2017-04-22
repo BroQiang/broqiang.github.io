@@ -16,8 +16,8 @@ author: 'Bro Qiang'
 
 PHP 核心代码定义的常量
 
-- PHP_VERSION (string) - PHP 版本, 建议只是展示用,不要用来去匹配
-
+- PHP_VERSION (string) - PHP 版本, 建议只是展示用,如果匹配用 `version_compare` 去对比
+ 
 - PHP_VERSION_ID (integer) - 整数类型版本,如: `70015` , 推荐用此方法匹配
 
 - PHP_MAXPATHLEN (integer) - 文件名的最大长度,包括路径

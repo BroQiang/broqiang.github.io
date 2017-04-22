@@ -36,9 +36,26 @@ author: 'Bro Qiang'
 
 -- [ini_get](http://php.net/manual/zh/function.ini-get.php) - 获取一个配置选项的值
 
+-- [ini_set](http://php.net/manual/zh/function.ini-set.php) - 为一个配置选项设置值
+
 -- [getenv](http://php.net/manual/zh/function.getenv.php) - 获取一个环境变量的值
 
+-- [getlastmod](http://php.net/manual/zh/function.getlastmod.php) - 获取执行的主脚本的最后修改时间
 
+-- [set_time_limit](http://php.net/manual/zh/function.set-time-limit.php) - 设置脚本最大执行时间
+
+-- [sys_get_temp_dir](http://php.net/manual/zh/function.sys-get-temp-dir.php) - 返回用于临时文件的目录
+
+-- [version_compare](http://php.net/manual/zh/function.version-compare.php) - 对比两个「PHP 规范化」的版本数字字符串
+
+
+### 输出控制
+
+只列出了最基本的,更多请访问 [官网](http://php.net/manual/zh/ref.outcontrol.php)
+
+-- [ob_start](http://php.net/manual/zh/function.ob-start.php) - 打开输出控制缓冲
+
+-- [ob_end_flush](http://php.net/manual/zh/function.ob-end-flush.php) - 输出缓冲区内容并关闭缓冲
 
 
 ### 杂项
