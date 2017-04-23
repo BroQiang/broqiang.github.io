@@ -107,7 +107,104 @@ author: 'Bro Qiang'
 
 ### 数组
 
+- [array_change_key_case](http://php.net/manual/zh/function.array-change-key-case.php) - 将数组中的所有键名修改为全大写或小写
+
+- [array_chunk](http://php.net/manual/zh/function.array-chunk.php) - 将一个数组分割成多个(分割后变成二维数组)
+
+- [array_column](http://php.net/manual/zh/function.array-column.php) - 返回数组中指定的一列(将二维数组变成一维数组)
+
+- [array_combine](http://php.net/manual/zh/function.array-combine.php) - 创建一个数组，用一个数组的值作为其键名，另一个数组的值作为其值
+
+- [array_count_values](http://php.net/manual/zh/function.array-count-values.php) - 统计数组中所有的值出现的次数
+
+- [array_diff_assoc](http://php.net/manual/zh/function.array-diff-assoc.php) - 比较数组的`差集`,键和值都会比较(包括隐性的0,1,2等)
+
+- [array_intersect_assoc](http://php.net/manual/zh/function.array-intersect-assoc.php) - 比较数组的`交集`,键和值都会比较(包括隐性的0,1,2等)
+
+- [array_diff](http://php.net/manual/zh/function.array-diff.php) - 比较数组的值,计算数组的`差集`
+
+- [array_intersect](http://php.net/manual/zh/function.array-intersect.php) - 通过数组的键比较数组的`交集`
+
+- [array_diff_key](http://php.net/manual/zh/function.array-diff-key.php) - 通过数组的键比较数组的`差集`
+
+- [array_intersect_key](http://php.net/manual/zh/function.array-intersect-key.php) - 通过数组的键比较数组的`交集`
+
+- [array_fill_keys](http://php.net/manual/zh/function.array-fill-keys.php) - 使用指定的键和值填充数组
+
+- [array_filter](http://php.net/manual/zh/function.array-filter.php) - 用回调函数过滤数组中的单元
+
+- [array_flip](http://php.net/manual/zh/function.array-flip.php) - 交换数组中的键和值
+
+- [array_key_exists](http://php.net/manual/zh/function.array-key-exists.php) - 检查数组里是否有指定的键名或索引
+
+- [array_keys](http://php.net/manual/zh/function.array-keys.php) - 返回数组中部分的或所有的键名
+
+- [array_map](http://php.net/manual/zh/function.array-map.php) - 为数组的每个元素应用回调函数
+
+- [array_merge](http://php.net/manual/zh/function.array-merge.php) - 合并一个或多个数组
+
+- [array_pad](http://php.net/manual/zh/function.array-pad.php) - 以指定长度将一个值填充进数组
+
 - [array_pop](http://php.net/manual/zh/function.array-pop.php) - 去除数组最后一个值(出栈), 并且将数组长度减1, 返回的是去除的值
+
+- [array_shift](http://php.net/manual/zh/function.array-shift.php) - 将数组开头的单元移出数组, 并且将数组长度减1, 返回的是去除的值
+
+- [array_sum](http://php.net/manual/zh/function.array-sum.php) - 对数组中所有值求和
+
+- [array_product](http://php.net/manual/zh/function.array-product.php) - 计算数组中所有值的乘积
+
+- [array_unshift](http://php.net/manual/zh/function.array-unshift.php) - 在数组开头插入一个或多个单元
+
+- [array_push](http://php.net/manual/zh/function.array-push.php) - 将一个或多个单元压入数组的末尾（入栈）
+
+- [array_rand](http://php.net/manual/zh/function.array-rand.php) - 从数组中随机取出一个或多个单元,取出的是 key
+
+- [array_reduce](http://php.net/manual/zh/function.array-reduce.php) - 用回调函数迭代地将数组简化为单一的值
+
+- [array_replace_recursive](http://php.net/manual/zh/function.array-replace-recursive.php) - 使用传递的数组`递归`替换第一个数组的元素
+
+- [array_replace](http://php.net/manual/zh/function.array-replace.php) - 使用传递的数组替换第一个数组的元素(`非递归`)
+
+- [array_search](http://php.net/manual/zh/function.array-search.php) - 在数组中搜索给定的值，如果成功则返回首个相应的键名
+
+- [array_slice](http://php.net/manual/zh/function.array-slice.php) - 从数组中指定位置取出指定数量的元素
+
+- [array_splice](http://php.net/manual/zh/function.array-splice.php) - 去掉数组中的某一部分并用其它值取代
+
+- [array_unique](http://php.net/manual/zh/function.array-unique.php) - 移除数组中重复的值
+
+- [array_values](http://php.net/manual/zh/function.array-values.php) - 返回数组中所有的值,并给其建立数字索引
+
+- [array_walk_recursive](http://php.net/manual/zh/function.array-walk-recursive.php) - 对数组中的每个成员递归地应用用户函数
+
+- [array_walk](http://php.net/manual/zh/function.array-walk.php) - 使用用户自定义函数对数组中的每个元素做回调处理
+
+- [array_reverse](http://php.net/manual/zh/function.array-reverse.php) - 将原本的数组倒序排序
+
+- [asort](http://php.net/manual/zh/function.asort.php) - 对数组的值进行正向排序并保持索引关系
+
+- [arsort](http://php.net/manual/zh/function.arsort.php) - 对数组的值进行逆向排序并保持索引关系
+
+- [ksort](http://php.net/manual/zh/function.ksort.php) - 对数组按照键名正向排序
+
+- [sort](http://php.net/manual/zh/function.sort.php) - 对数组正向排序,会重新生产索引
+- 
+- [rsort](http://php.net/manual/zh/function.rsort.php) - 对数组逆向排序,会重新生产索引
+
+- [krsort](http://php.net/manual/zh/function.krsort.php) - 对数组按照键名逆向排序
+
+- [array_multisort](http://php.net/manual/zh/function.array-multisort.php) - 对多个数组或多维数组进行排序
+
+- [shuffle](http://php.net/manual/zh/function.shuffle.php) - 打乱（随机排列单元的顺序）一个数组
+
+- [compact](http://php.net/manual/zh/function.compact.php) - 建立一个数组，包括变量名和它们的值
+
+- [extract](http://php.net/manual/zh/function.extract.php) - 从数组中将变量导入到当前的符号表
+
+- [list](http://php.net/manual/zh/function.list.php) - 把数组中的值赋给一组变量
+
+- [range](http://php.net/manual/zh/function.range.php) - 根据范围创建数组，包含指定的元素
+
 
 
 ### 杂项
