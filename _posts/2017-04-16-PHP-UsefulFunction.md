@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'PHP 不常用又非常有用的函数'
+title: 'PHP 非常有用的函数'
 date: '2017-04-16'
 header-img: "img/post-bg-unix.jpg"
 tags:
@@ -8,15 +8,13 @@ tags:
 author: 'Bro Qiang'
 ---
 
-# PHP 不常用又非常有用的函数
-
-> 标题定义成这个,就是因为此处记录的函数是平时不会经常用到在特定 (比如开发框架,不仅仅是) 的时候又非常有用, 需要了解, 至少知道有这个函数
-> 
+# PHP 非常有用的函数
+ 
 > 下面只是简单列出函数名称,参数,类型,用途,并链接到官方文档
 > 
-> 下面函数的组成方式是按照官方文档的结构组成
+> 下面函数的组成分类是按照官方文档的结构分类组成
 > 
-> 此文档更新会比较频繁,遇到觉得有用需要记录的就会记录下来,不在做更新记录
+> 此文档会持续更新一段时间,不在做更新记录
 
 ---
 
@@ -105,7 +103,11 @@ author: 'Bro Qiang'
 
 - [register_shutdown_function](http://php.net/manual/zh/function.register-shutdown-function.php) - 注册一个会在php中止时执行的函数
 
-- 
+
+
+### 数组
+
+- [array_pop](http://php.net/manual/zh/function.array-pop.php) - 去除数组最后一个值(出栈), 并且将数组长度减1, 返回的是去除的值
 
 
 ### 杂项
