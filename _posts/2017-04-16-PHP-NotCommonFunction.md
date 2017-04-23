@@ -87,6 +87,27 @@ author: 'Bro Qiang'
 - [property_exists](http://php.net/manual/zh/function.property-exists.php) - 检查对象或类是否具有该属性
 
 
+### 函数处理
+
+- [call_user_func](http://php.net/manual/zh/function.call-user-func.php) - 调用函数或对象中的方法
+
+- [call_user_func_array](http://php.net/manual/zh/function.call-user-func-array.php) - 调用函数或对象中的方法,和 `call_user_func` 的类似,传递参数更友善
+
+- [func_get_args](http://php.net/manual/zh/function.func-get-args.php) - 返回一个包含函数参数列表的数组
+
+- [func_get_arg](http://php.net/manual/zh/function.func-get-arg.php) - 返回参数列表的某一项
+
+- [func_num_args](http://php.net/manual/zh/function.func-num-args.php) - 返回传递给函数参数的数量
+
+- [function_exists](http://php.net/manual/zh/function.function-exists.php) - 判断指定的函数是否存在
+
+- [get_defined_functions](http://php.net/manual/zh/function.get-defined-functions.php) - 返回所有已经定义的函数名称的数组(二维数组,按照 internal 和 user 组合)
+
+- [register_shutdown_function](http://php.net/manual/zh/function.register-shutdown-function.php) - 注册一个会在php中止时执行的函数
+
+- 
+
+
 ### 杂项
 
 - [define](http://php.net/manual/zh/function.define.php) - 定义一个常量
