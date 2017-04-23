@@ -58,6 +58,35 @@ author: 'Bro Qiang'
 - [ob_end_flush](http://php.net/manual/zh/function.ob-end-flush.php) - 输出缓冲区内容并关闭缓冲
 
 
+### 类/对象
+
+- [get_declared_classes](http://php.net/manual/zh/function.get-declared-classes.php) - 返回由已定义类的名字所组成的数组
+
+- [get_declared_interfaces](http://php.net/manual/zh/function.get-declared-interfaces.php) - 返回包含所有已声明的接口的数组
+
+- [get_declared_traits](http://php.net/manual/zh/function.get-declared-traits.php) - 返回所有已定义的 traits 的数组
+
+- [get_object_vars](http://php.net/manual/zh/function.get-object-vars.php) - 返回由对象属性组成的关联数组
+
+- [get_class_methods](http://php.net/manual/zh/function.get-class-methods.php) - 返回由类的方法组成的数组
+
+- [get_class_vars](http://php.net/manual/zh/function.get-class-vars.php) - 返回由类的默认属性组成的数组
+
+- [get_class](http://php.net/manual/zh/function.get-class.p) - 返回对象的类名
+
+- [class_exists](http://php.net/manual/zh/function.class-exists.php) - 检查类是否已定义
+
+- [interface_exists](http://php.net/manual/zh/function.interface-exists.php) - 检查接口是否已被定义
+
+- [trait_exists](http://php.net/manual/zh/function.trait-exists.php) - 检查指定的 trait 是否存在
+
+- [method_exists](http://php.net/manual/zh/function.method-exists.php) - 检查类的方法是否存在
+
+- [is_subclass_of](http://php.net/manual/zh/function.is-subclass-of.php) - 对象是否是一个类的子类
+
+- [property_exists](http://php.net/manual/zh/function.property-exists.php) - 检查对象或类是否具有该属性
+
+
 ### 杂项
 
 - [define](http://php.net/manual/zh/function.define.php) - 定义一个常量
@@ -71,14 +100,10 @@ author: 'Bro Qiang'
 
 - [dirname](http://php.net/manual/zh/function.dirname.php) - 给出一个包含有指向一个文件的全路径的字符串
 
+
 ### Session
 
 - [session_start](http://php.net/manual/zh/function.session-start.php) - 启动新会话或者重用现有会话
-
-
-### 类/对象
-
-- [get_declared_classes](http://php.net/manual/zh/function.get-declared-classes.php) - 返回由已定义类的名字所组成的数组
 
 
 
