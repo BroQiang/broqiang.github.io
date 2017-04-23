@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'PHP 非常有用的函数'
+title: 'PHP 函数索引'
 date: '2017-04-16'
 header-img: "img/post-bg-unix.jpg"
 tags:
@@ -8,7 +8,7 @@ tags:
 author: 'Bro Qiang'
 ---
 
-# PHP 非常有用的函数
+# PHP 函数索引
  
 > 下面只是简单列出函数名称,参数,类型,用途,并链接到官方文档
 > 
