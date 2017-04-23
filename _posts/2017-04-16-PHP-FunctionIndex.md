@@ -10,7 +10,7 @@ author: 'Bro Qiang'
 
 # PHP 函数索引
  
-> 下面只是简单列出函数名称,参数,类型,用途,并链接到官方文档
+> 下面只是简单列出函数名称,用途,并链接到官方文档
 > 
 > 下面函数的组成分类是按照官方文档的结构分类组成
 > 
@@ -188,7 +188,7 @@ author: 'Bro Qiang'
 - [ksort](http://php.net/manual/zh/function.ksort.php) - 对数组按照键名正向排序
 
 - [sort](http://php.net/manual/zh/function.sort.php) - 对数组正向排序,会重新生产索引
-- 
+
 - [rsort](http://php.net/manual/zh/function.rsort.php) - 对数组逆向排序,会重新生产索引
 
 - [krsort](http://php.net/manual/zh/function.krsort.php) - 对数组按照键名逆向排序
