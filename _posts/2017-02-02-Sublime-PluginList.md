@@ -21,7 +21,8 @@ author: 'Bro Qiang'
 
     ```json
     {
-        "jsdocs_extra_tags":["@Author:  Bro Qiang   <broqiang@qq.com>","@DateTime {{datetime}}"],
+        "jsdocs_extra_tags":["@Author: BroQiang <broqiang@qq.com>","@DateTime {{datetime}}"], // 自定义的内容
+        "jsdocs_align_tags": "shallow", // 取消自动对齐, 个人不喜欢,间距太大了
     }
     ```
 
