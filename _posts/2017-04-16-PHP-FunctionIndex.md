@@ -206,6 +206,62 @@ author: 'Bro Qiang'
 - [range](http://php.net/manual/zh/function.range.php) - 根据范围创建数组，包含指定的元素
 
 
+### 文件系统
+
+- [dirname](http://php.net/manual/zh/function.dirname.php) - 给出一个包含有指向一个文件的全路径的字符串
+
+- [basename](http://php.net/manual/zh/function.basename.php) - 回路径中的文件名部分
+
+- [copy](http://php.net/manual/zh/function.copy.php) - 复制一个文件
+
+- [unlink](http://php.net/manual/zh/function.unlink.php) - 删除一个文件
+
+- [disk_free_space](http://php.net/manual/zh/function.disk-free-space.php) - 返回目录中的可用空间
+
+- [disk_total_space](http://php.net/manual/zh/function.disk-total-space.php) - 返回一个目录的磁盘总大小
+
+- [file_exists](http://php.net/manual/zh/function.file-exists.php) - 检查文件或目录是否存在
+
+- [file_get_contents](http://php.net/manual/zh/function.file-get-contents.php) - 将整个文件读入一个字符串
+
+- [file_put_contents](http://php.net/manual/zh/function.file-put-contents.php) - 将一个字符串写入文件
+
+- [file](http://php.net/manual/zh/function.file.php) - 把整个文件读入一个数组中
+
+- [filesize](http://php.net/manual/zh/function.filesize.php) - 取得文件大小
+
+- [filetype](http://php.net/manual/zh/function.filetype.php) - 取得文件类型
+
+- [glob](http://php.net/manual/zh/function.glob.php) - 寻找与模式匹配的文件路径
+
+- [is_dir](http://php.net/manual/zh/function.is-dir.php) - 判断给定文件名是否是一个目录
+
+- [is_executable](http://php.net/manual/zh/function.is-executable.php) - 判断给定文件名是否可执行
+
+- [is_file](http://php.net/manual/zh/function.is-file.php) - 判断给定文件名是否为一个正常的文件
+
+- [is_readable](http://php.net/manual/zh/function.is-readable.php) - 判断给定文件名是否可读
+
+- [is_uploaded_file](http://php.net/manual/zh/function.is-uploaded-file.php) - 判断文件是否是通过 HTTP POST 上传的
+
+- [is_writable](http://php.net/manual/zh/function.is-writable.php) - 判断给定的文件名是否可写
+
+- [mkdir](http://php.net/manual/zh/function.mkdir.php) - 新建目录
+
+- [rmdir](http://php.net/manual/zh/function.rmdir.php) - 删除目录
+
+- [move_uploaded_file](http://php.net/manual/zh/function.move-uploaded-file.php) - 将上传的文件移动到新位置
+
+- [readfile](http://php.net/manual/zh/function.readfile.php) - 输出文件
+
+- [realpath](http://php.net/manual/zh/function.realpath.php) - 返回规范化的绝对路径名
+
+- [rename](http://php.net/manual/zh/function.rename.php) - 重命名一个文件或目录
+
+- [tempnam](http://php.net/manual/zh/function.tempnam.php) - 建立一个具有唯一文件名的文件
+
+- [tmpfile](http://php.net/manual/zh/function.tmpfile.php) - 建立一个临时文件
+
 
 ### 杂项
 
@@ -214,11 +270,6 @@ author: 'Bro Qiang'
 - [defined](http://php.net/manual/zh/function.defined.php) - 检查某个名称的常量是否存在
 
 - 
-
-
-### 文件系统
-
-- [dirname](http://php.net/manual/zh/function.dirname.php) - 给出一个包含有指向一个文件的全路径的字符串
 
 
 ### Session
