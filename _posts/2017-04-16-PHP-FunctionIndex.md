@@ -105,6 +105,129 @@ author: 'Bro Qiang'
 
 
 
+### 字符串
+
+- [addslashes](http://php.net/manual/zh/function.addslashes.php) - 将字符串中的 `'` `"` `\` `null` 前加上反斜线 `\`
+
+- [quotemeta](http://php.net/manual/zh/function.quotemeta.php) - 将字符串中的 `. \ + * ? [ ^ ] ( $ )` 加上反斜线 `\`
+
+- [chr](http://php.net/manual/zh/function.chr.php) - 将 `ASCII 码` 转换成字符
+
+- [ord](http://php.net/manual/zh/function.ord.php) - 将字符转换成 `ASCII 码`, 只能是一个,填入多个也只转换第一个
+
+- [chunk_split](http://php.net/manual/zh/function.chunk-split.php) - 将字符串分割成小块
+
+- [convert_uuencode](http://php.net/manual/zh/function.convert-uuencode.php) - 使用 uuencode 编码一个字符串
+
+- [convert_uudecode](http://php.net/manual/zh/function.convert-uudecode.php) - 解码一个 uuencode 编码的字符串
+
+- [explode](http://php.net/manual/zh/function.explode.php) - 分割字符串组成数组
+
+- [implode](http://php.net/manual/zh/function.implode.php) - 将一个一维数组的值转化为字符串
+
+- [htmlentities](http://php.net/manual/zh/function.htmlentities.php) - 转换所有具有 HTML 实体的字符
+
+- [html_entity_decode](http://php.net/manual/zh/function.html-entity-decode.php) - htmlentities 反解
+
+- [htmlspecialchars](http://php.net/manual/zh/function.htmlspecialchars.php) - 将特殊字符转换为 HTML 实体
+
+- [htmlspecialchars_decode](http://php.net/manual/zh/function.htmlspecialchars-decode.php) - 将特殊的 HTML 实体转换回普通字符
+
+- [lcfirst](http://php.net/manual/zh/function.lcfirst.php) - 将字符串的首字母小写
+
+- [ucfirst](http://php.net/manual/zh/function.ucfirst.php) - 将字符串的首字母转换为大写
+
+- [ucwords](http://php.net/manual/zh/function.ucwords.php) - 将字符串中每个单词的首字母转换为大写
+
+- [trim](http://php.net/manual/zh/function.trim.php) - 去除字符串首尾处的空白字符（或者其他字符）
+
+- [ltrim](http://php.net/manual/zh/function.ltrim.php) - 删除字符串开头的空白字符（或其他字符）
+
+- [rtrim](http://php.net/manual/zh/function.rtrim.php) - 删除字符串末端的空白字符（或者其他字符）
+
+- [md5_file](http://php.net/manual/zh/function.md5-file.php) - 计算指定文件的 MD5 散列值
+
+- [md5](http://php.net/manual/zh/function.md5.php) - 计算字符串的 MD5 散列值
+
+- [money_format](http://php.net/manual/zh/function.money-format.php) - 将数字格式化成货币字符串
+
+- [nl2br](http://php.net/manual/zh/function.nl2br.php) - 在字符串所有新行之前插入 HTML 换行标记
+
+- [number_format](http://php.net/manual/zh/function.number-format.php) - 以千位分隔符方式格式化一个数字
+
+- [parse_str](http://php.net/manual/zh/function.parse-str.php) - 将字符串解析成多个变量 (主要就是url拆分)
+
+- [printf](http://php.net/manual/zh/function.printf.php) - 输出格式化字符串
+
+- [vprintf](http://php.net/manual/zh/function.vprintf.php) - 作用与 printf() 函数类似，但是接收一个数组参数
+
+- [setlocale](http://php.net/manual/zh/function.setlocale.php) - 设置地区信息
+
+- [similar_text](http://php.net/manual/zh/function.similar-text.php) - 计算两个字符串的相似度
+
+- [sscanf](http://php.net/manual/zh/function.sscanf.php) - 根据指定格式解析输入的字符, 类似printf反解
+
+- [str_getcsv](http://php.net/manual/zh/function.str-getcsv.php) - 解析 CSV 字符串为一个数组
+
+- [str_replace](http://php.net/manual/zh/function.str-replace.php) - 字符串替换
+
+- [str_ireplace](http://php.net/manual/zh/function.str-ireplace.php) - `str_replace` 忽略大小写版本
+
+- [str_pad](http://php.net/manual/zh/function.str-pad.php) - 使用另一个字符串填充字符串为指定长度
+
+- [str_repeat](http://php.net/manual/zh/function.str-repeat.php) - 重复一个字符串
+
+- [str_rot13](http://php.net/manual/zh/function.str-rot13.php) - 对字符串执行 ROT13 转换 (是不是可以用来做密文了)
+
+- [str_shuffle](http://php.net/manual/zh/function.str-shuffle.php) - 随机打乱一个字符串
+
+- [str_split](http://php.net/manual/zh/function.str-split.php) - 将字符串截取成数组
+
+- [strcmp](http://php.net/manual/zh/function.strcmp.php) - 二进制安全字符串比较,区分大小写
+
+- [strncmp](http://php.net/manual/zh/function.strncmp.php) - 二进制安全比较字符串开头的若干个字符
+
+- [strip_tags](http://php.net/manual/zh/function.strip-tags.php) - 从字符串中去除 HTML 和 PHP 标记
+
+- [strpos](http://php.net/manual/zh/function.strpos.php) -  查找字符串首次出现的位置（`区分`大小写）
+
+- [stripos](http://php.net/manual/zh/function.stripos.php) - 查找字符串首次出现的位置（`不区分`大小写）
+
+- [strrpos](http://php.net/manual/zh/function.strrpos.php) - 计算指定字符串在目标字符串中最后一次出现的位置
+
+- [strripos](http://php.net/manual/zh/function.strripos.php) - 计算指定字符串在目标字符串中最后一次出现的位置（不区分大小写）
+
+- [strstr](http://php.net/manual/zh/function.strstr.php) - 查找字符串的首次出现到结尾的字符串（`区分`大小写）
+
+- [stristr](http://php.net/manual/zh/function.stristr.php) - strstr() 函数的忽略大小写版本
+
+- [strrchr](http://php.net/manual/zh/function.strrchr.php) - 查找指定字符在字符串中的最后一次出现位置开始,直到末尾
+
+- [strlen](http://php.net/manual/zh/function.strlen.php) - 获取字符串长度
+
+- [strnatcmp](http://php.net/manual/zh/function.strnatcmp.php) - 使用“自然顺序”算法比较字符串（区分大小写）
+
+- [strnatcasecmp](http://php.net/manual/zh/function.strnatcasecmp.php) - 使用“自然顺序”算法比较字符串（不区分大小写）
+
+- [strpbrk](http://php.net/manual/zh/function.strpbrk.php) - 返回一个以找到的字符开始的子字符串
+
+- [strrev](http://php.net/manual/zh/function.strrev.php) - 反转字符串
+
+- [strspn](http://php.net/manual/zh/function.strspn.php) - 计算字符串中全部字符都存在于指定字符集合中的第一段子串的长度
+
+- [strtolower](http://php.net/manual/zh/function.strtolower.php) - 将字符串转化为小写
+
+- [strtoupper](http://php.net/manual/zh/function.strtoupper.php) - 将字符串转化为大写
+
+- [substr_count](http://php.net/manual/zh/function.substr-count.php) - 计算字串出现的次数
+
+- [substr_replace](http://php.net/manual/zh/function.substr-replace.php) - 替换字符串的子串
+
+- [substr](http://php.net/manual/zh/function.substr.php) - 返回指定开始长度的字符串
+
+- [wordwrap](http://php.net/manual/zh/function.wordwrap.php) - 打断字符串为指定数量的字串(类似自动换行)
+
+
 ### 数组
 
 - [array_change_key_case](http://php.net/manual/zh/function.array-change-key-case.php) - 将数组中的所有键名修改为全大写或小写
@@ -268,8 +391,6 @@ author: 'Bro Qiang'
 - [define](http://php.net/manual/zh/function.define.php) - 定义一个常量
 
 - [defined](http://php.net/manual/zh/function.defined.php) - 检查某个名称的常量是否存在
-
-- 
 
 
 ### Session
