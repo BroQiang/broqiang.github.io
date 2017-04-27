@@ -14,7 +14,7 @@ author: 'Bro Qiang'
 > 
 > 下面函数的组成分类是按照官方文档的结构分类组成
 > 
-> 此文档会持续更新一段时间,不在做更新记录
+> 此文档的目的是为了快速搜索, 因为官方只能根据名称搜索, 这里可以按照用途去搜索了
 
 ---
 
@@ -384,6 +384,29 @@ author: 'Bro Qiang'
 - [tempnam](http://php.net/manual/zh/function.tempnam.php) - 建立一个具有唯一文件名的文件
 
 - [tmpfile](http://php.net/manual/zh/function.tmpfile.php) - 建立一个临时文件
+
+
+### PCRE 函数 (正则)
+
+- [preg_filter](http://php.net/manual/zh/function.preg-filter.php) -  执行一个正则表达式搜索和替换(仅返回正则匹配上的替换后的结果)
+
+- [preg_replace](http://php.net/manual/zh/function.preg-replace.php) - 执行一个正则表达式的搜索和替换(返回替换后和未找到的所有数据)
+
+- [preg_grep](http://php.net/manual/zh/function.preg-grep.php) - 返回匹配模式的数组条目
+
+- [preg_last_error](http://php.net/manual/zh/function.preg-last-error.php) - 返回最后一个PCRE正则执行产生的错误代码
+
+- [preg_match](http://php.net/manual/zh/function.preg-match.php) - 执行匹配正则表达式
+
+- [preg_match_all](http://php.net/manual/zh/function.preg-match-all.php) - 执行一个全局正则表达式匹配
+
+- [preg_quote](http://php.net/manual/zh/function.preg-quote.php) - 转义正则表达式字符
+
+- [preg_replace_callback](http://php.net/manual/zh/function.preg-replace-callback.php) - 执行一个正则表达式搜索并且使用一个回调进行替换
+
+- [preg_replace_callback_array](http://php.net/manual/zh/function.preg-replace-callback-array.php) - 执行正则表达式搜索并使用回调替换(数组)
+
+- [preg_split](http://php.net/manual/zh/function.preg-split.php) - 通过一个正则表达式分隔字符串
 
 
 ### 杂项
