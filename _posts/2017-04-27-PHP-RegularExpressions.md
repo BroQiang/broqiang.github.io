@@ -144,10 +144,10 @@ PCRE 扩展使用的模式语法非常类似 perl ,表达式必须用分隔符�
 
 ### PCRE 函数
 
-见 [函数索引](http://broqiang.com/2017/04/16/PHP-FunctionIndex) 文档
+见 [函数索引](http://broqiang.com/2017/04/16/PHP-FunctionIndex/#pcre-%E5%87%BD%E6%95%B0-%E6%AD%A3%E5%88%99) 文档
 
 
 ### 常用正则
 
-见 [常用正则]() 文档
+见 [常用正则](http://broqiang.com/2017/04/27/PHP-CommonRegular) 文档
 
