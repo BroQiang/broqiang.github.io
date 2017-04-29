@@ -62,6 +62,8 @@ author: 'Bro Qiang'
 
 - Markdown Preview - Markdown 预览插件,可以支持 Github 风格
 
+- Table Editor - Markdown 表格自动生成
+
 - SublimeLinter - 语法检测工具
 
 - SublimeLinter-php - PHP 语法检测，依赖于 SublimeLinter

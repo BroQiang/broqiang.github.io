@@ -409,6 +409,11 @@ author: 'Bro Qiang'
 - [preg_split](http://php.net/manual/zh/function.preg-split.php) - 通过一个正则表达式分隔字符串
 
 
+### 日期/时间
+
+- 
+
+
 ### 杂项
 
 - [define](http://php.net/manual/zh/function.define.php) - 定义一个常量
