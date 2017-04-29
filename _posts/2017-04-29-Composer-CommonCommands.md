@@ -219,7 +219,7 @@ $ composer dump-autoload
 
 只有在根包的 composer.json 中定义的脚本才会被执行
 
-关于脚本, 强查看 [脚本](http://docs.phpcomposer.com/articles/scripts.html) 文档
+关于脚本, 请查看 [脚本](http://docs.phpcomposer.com/articles/scripts.html) 文档
 
 使用方法:
 
