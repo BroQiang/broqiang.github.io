@@ -409,7 +409,9 @@ author: 'Bro Qiang'
 - [preg_split](http://php.net/manual/zh/function.preg-split.php) - 通过一个正则表达式分隔字符串
 
 
-### 日期/时间
+### SPL 函数
+
+- [spl_autoload_register](http://php.net/manual/zh/function.spl-autoload-register.php) - 注册给定的函数作为 __autoload 的实现
 
 - 
 
