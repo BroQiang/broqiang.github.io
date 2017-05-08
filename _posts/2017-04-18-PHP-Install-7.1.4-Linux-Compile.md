@@ -65,11 +65,13 @@ $ sudo ./configure --prefix=/usr/local/php --with-config-file-path=/usr/local/ph
     --with-fpm-user=www --with-fpm-group=www --enable-fpm --enable-gd-native-ttf --enable-gd-jis-conv \
     --with-jpeg-dir --with-freetype-dir --with-gd --with-curl --with-mcrypt --with-openssl --with-mhash \
     --with-xmlrpc --enable-ftp --enable-bcmath --enable-shmop --enable-sysvsem --enable-soap \
-    --enable-inline-optimization --enable-mbregex --enable-mbstring --enable-pcntl --with-zlib
+    --enable-inline-optimization --enable-mbregex --enable-mbstring --enable-pcntl --with-zlib \
+    --with-readline=/usr/local/src/php-7.1.4/ext/readline
 
 $ sudo make
 $ sudo make install
 ```
+
 
 ### 初始化配置
 
@@ -162,3 +164,12 @@ $ php -S localhost:8888
 看一下常用的PHP扩展是否安装成功, 比如 pdo_mysql,mysqli,gd(同时要看里面包含的图片格式),libxml,mbstring,curl,openssl等
 
 太多了,直接去看phpinfo输出结果查看
+
+### 额外的配置
+
+- readline 扩展
+
+    `--with-readline` 可以在终端使用 -a(--interactive) 模式，一般只有开发的时候才用得到
+    
+    安装 `libreadline-dev` (Ubuntu)/`readline-devel` (CentOS) 扩展
+    编译PHP的时候加上 --with-readline 参数
