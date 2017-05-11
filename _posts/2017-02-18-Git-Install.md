@@ -46,6 +46,16 @@ $ sudo make
 $ sudo make install
 ```
 
+
+## 配置环境变量
+
+```shell
+$ vim /etc/profile.d/git.sh
+# 写入
+export GIT_HOME=/usr/local/git
+export PATH=$PATH:$GIT_HOME/bin
+```
+
 ## 安装完成后测试
 
 ```shell
