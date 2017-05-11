@@ -26,13 +26,18 @@ Ubuntu比较简单，直接一条命令安装即可
 $ sudo apt install git -y
 ```
 
-### CentOS安装
+### 源码编译安装
 
-因为CentOS是跟随RHEL的版本，为了追求稳定，不会频繁更新内核几软件，一般版本比较低，推荐直接官方下载安装
+如果想安装官方最新版本，可以用源码编译安装
+
+下面的方法支持CentOS和Ubuntu，区别只是依赖关系的安装方式不同，其他全部相同
 
 ```shell
-# 安装依赖关系
-$ sudo yum install zlib-devel perl-ExtUtils-MakeMaker asciidoc xmlto openssl-devel
+# CentOS 安装依赖关系 
+$ sudo yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel
+
+# Ubuntu 安装依赖关系
+# sudo apt-get install libcurl4-gnutls-dev libexpat1-dev gettext libz-dev libssl-dev
 
 # 下载解压
 $ wget https://www.kernel.org/pub/software/scm/git/git-2.9.3.tar.gz
