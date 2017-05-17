@@ -65,7 +65,7 @@ $ sudo ./configure --prefix=/usr/local/php --with-config-file-path=/usr/local/ph
     --with-fpm-user=www --with-fpm-group=www --enable-fpm --enable-gd-native-ttf --enable-gd-jis-conv \
     --with-jpeg-dir --with-freetype-dir --with-gd --with-curl --with-mcrypt --with-openssl --with-mhash \
     --with-xmlrpc --enable-ftp --enable-bcmath --enable-shmop --enable-sysvsem --enable-soap \
-    --enable-inline-optimization --enable-mbregex --enable-mbstring --enable-pcntl --with-zlib \
+    --enable-inline-optimization --enable-mbregex --enable-mbstring --enable-pcntl --with-zlib
 
 $ sudo make
 $ sudo make install
