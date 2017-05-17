@@ -66,7 +66,6 @@ $ sudo ./configure --prefix=/usr/local/php --with-config-file-path=/usr/local/ph
     --with-jpeg-dir --with-freetype-dir --with-gd --with-curl --with-mcrypt --with-openssl --with-mhash \
     --with-xmlrpc --enable-ftp --enable-bcmath --enable-shmop --enable-sysvsem --enable-soap \
     --enable-inline-optimization --enable-mbregex --enable-mbstring --enable-pcntl --with-zlib \
-    --with-readline=/usr/local/src/php-7.1.4/ext/readline
 
 $ sudo make
 $ sudo make install
