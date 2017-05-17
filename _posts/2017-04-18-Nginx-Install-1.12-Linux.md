@@ -31,7 +31,7 @@ $ sudo tar xzvf nginx-1.12.0.tar.gz -C /usr/local/src/
 $ sudo apt install -y libpcre3-dev zlib1g-dev libssl-dev
 
 # CentOS 执行下面命令
-sudo yum install -y pcre-devel openssl-devel zlib-devel
+# $ sudo yum install -y pcre-devel openssl-devel zlib-devel
 ```
 
 ### 创建守护进程用户
