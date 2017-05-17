@@ -107,9 +107,9 @@ $ sudo systemctl start nginx
 ```shell
 # 修改配置前先将原本的备份一份, 要养成良好习惯,因为谁也不能保证自己的修改就是 100% 正确, 必要时候要能够还原
 $ cd /usr/local/nginx/conf/
-$ sudo cp nginx.conf nginx.conf_20170418_bak
+$ sudo mv nginx.conf nginx.conf_20170418_bak
 
-$ sudo vim /usr/local/nginx/conf/nginx
+$ sudo vim /usr/local/nginx/conf/nginx.conf
 ```
 
 将默认的内容全部删除,写入下面内容
@@ -167,7 +167,7 @@ http {
 $ cd /usr/local/nginx/conf/conf.d
 
 # 有新的虚拟主机就再创建一个 xxx.conf 即可
-$ vim test.conf
+$ sudo vim test.conf
 ```
 
 

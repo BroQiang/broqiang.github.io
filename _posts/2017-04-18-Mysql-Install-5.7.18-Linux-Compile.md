@@ -113,6 +113,9 @@ $ sudo mkdir /usr/local/mysql/etc
 # 创建my.cnf文件
 $ sudo vim /usr/local/mysql/etc/my.cnf
 
+# 如果是CentOS7, 需要将 /etc/my.cnf 删除，或者将配置文件直接写到这个文件中
+# 如果直接写在这个文件中，后面初始化的时候也要指定配置文件为这个位置，或者就不指定，默认会到 /etc/my.cnf 去找
+
 # 写入下面内容
 
 
@@ -162,7 +165,7 @@ $ sudo /usr/local/mysql/bin/mysqld --defaults-file=/usr/local/mysql/etc/my.cnf  
 
 ```shell
 # 复制启动脚本到init.d下
-$ sudo cp mysql.server /etc/init.d/mysqld
+$ sudo cp /usr/local/mysql/support-files/mysql.server /etc/init.d/mysqld
 
 # 启动服务
 $ sudo /etc/init.d/mysqld start
