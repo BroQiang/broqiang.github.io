@@ -34,16 +34,16 @@ $ sudo apt install git -y
 
 ```shell
 # CentOS 安装依赖关系 
-$ sudo yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel
+$ sudo yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel  perl-ExtUtils-MakeMaker
 
 # Ubuntu 安装依赖关系
 # sudo apt-get install libcurl4-gnutls-dev libexpat1-dev gettext libz-dev libssl-dev
 
 # 下载解压
-$ wget https://www.kernel.org/pub/software/scm/git/git-2.9.3.tar.gz
+$ wget https://www.kernel.org/pub/software/scm/git/git-2.9.4.tar.gz
 
-$ sudo tar xzvf git-2.9.3.tar.gz -C /usr/local/src/
-$ cd /usr/local/src/git-2.9.3
+$ sudo tar xzvf git-2.9.4.tar.gz -C /usr/local/src/
+$ cd /usr/local/src/git-2.9.4
 
 # 配置及安装
 $ sudo ./configure --prefix=/usr/local/git
@@ -55,17 +55,24 @@ $ sudo make install
 ## 配置环境变量
 
 ```shell
-$ vim /etc/profile.d/git.sh
+$ sudo vim /etc/profile.d/git.sh
 # 写入
 export GIT_HOME=/usr/local/git
-export PATH=$PATH:$GIT_HOME/bin
+export PATH=$GIT_HOME/bin:$PATH
+
+# 生效下
+$ source /etc/profile.d/git.sh
 ```
 
 ## 安装完成后测试
 
 ```shell
 $ git --verion
-$ npm --version
 ```
 
 全部打印出版本信息，安装完成
+
+
+## 更新日志
+
+- 2017-05-25 更新到当前最新版本 `2.9.4`
