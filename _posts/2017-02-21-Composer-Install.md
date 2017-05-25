@@ -22,8 +22,12 @@ author: 'Bro Qiang'
 
 ### 安装
 
-```
-$ wget https://getcomposer.org/download/1.4.1/composer.phar -O composer
+```shell
+# 官方下载
+$ wget https://getcomposer.org/download/1.4.2/composer.phar -O composer
+
+# 我的码云仓库下载
+# $ wget https://git.oschina.net/BroQiang/software/raw/master/composer.phar -O composer
 
 $ chmod +x composer
 
@@ -44,3 +48,8 @@ $ sudo mv composer /usr/local/bin
     **进入到项目根目录**
 
     `composer config repo.packagist composer https://packagist.phpcomposer.com`
+
+
+## 更新日志
+
+- 2017-05-25 Composer 从 1.4.2 更新到 1.4.2

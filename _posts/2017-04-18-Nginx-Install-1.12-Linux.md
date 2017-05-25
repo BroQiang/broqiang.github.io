@@ -162,6 +162,8 @@ http {
 ### 配置 server (虚拟主机)
 
 ```shell
+# 创建 虚拟主机存放目录 目录名称就是上面配置文件中 include 的目录
+$ sudo mkdir /usr/local/nginx/conf/conf.d
 
 # 进入刚刚引入的 conf.d 目录
 $ cd /usr/local/nginx/conf/conf.d
