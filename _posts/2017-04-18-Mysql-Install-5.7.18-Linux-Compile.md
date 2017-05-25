@@ -74,7 +74,7 @@ $ cd build
 $ sudo cmake .. -DCMAKE_INSTALL_PREFIX=/usr/local/mysql -DDEFAULT_CHARSET=utf8mb4 \
     -DWITH_BOOST=/usr/local/src/mysql-5.7.18/boost/boost_1_59_0 -DMYSQL_DATADIR=/data/mysql/data
 
-# 编译
+# 编译，小内存云主机会出问题，看后面的处理办法
 $ make
 
 # 安装到 /usr/local/mysql
@@ -170,11 +170,19 @@ $ sudo cp /usr/local/mysql/support-files/mysql.server /etc/init.d/mysqld
 # 启动服务
 $ sudo /etc/init.d/mysqld start
 
+# 如果是CentOS，默认会存在一个 mariadb 的配置文件，将它删除即可，删除后再启动就不会出现问题
+# $ sudo rm -rf /etc/my.cnf
+
 # 停止服务
 $ sudo /etc/init.d/mysqld stop
 
 # 配置开机自动启动
+
+# Ubuntu 自动启动 
 $ sudo systemctl enable mysqld
+
+# CentOS 自动启动
+# $ sudo chkconfig mysqld on
 ```
 
 ### 配置root@localhost用户
@@ -216,3 +224,47 @@ mysql> show variables like '%char%';
 8 rows in set (0.01 sec)
 
 ```
+
+
+## 错误的处理方式
+
+#### 阿里云小内存服务器编译 45% 时候报错
+
+错误：
+
+```
+[ 45%] Building CXX object sql/CMakeFiles/sql.dir/item_geofunc.cc.o
+c++: internal compiler error: Killed (program cc1plus)
+Please submit a full bug report,
+...
+```
+
+云主机是1G内存的，编译到45%的时候会报错，因为内存不足(阿里云默认没有启用虚拟内存)，
+
+编译 `sql.dir` 比较消耗内存，正常服务器一般不会配置1G内存，都会够用
+
+处理方法，自己设置虚拟内存，我的云主机是1G的内存，所以我配置2G的虚拟内存
+
+```
+# 创建一个 2G 的虚拟文件
+$ sudo dd if=/dev/zero of=/swapfile bs=1k count=2048000
+# 创建swap文件
+$ sudo mkswap /swapfile
+# 激活
+$ sudo swapon /swapfile
+# 查看是否配置成功
+$ sudo swapon -s
+$ free -m
+# 如果需要下次开机自动执行，将配置配置到fstab中，此处只是为了编译临时配置，就不添加了
+
+```
+
+配置完虚拟内存后观察了下，用了大概800M的虚拟内存，所以服务器如果是2G的话应该是不会出现这个问题
+
+以前虚拟机和服务器配置的时候都是4G起步，最近给人做项目，碰到了个奇葩的1核心1G阿里云主机，才出现了这个问题……
+
+不过这样处理后编译的速度会慢一些，硬件配置就这么多的时候也没办法了，享受慢速吧
+
+## 更新日志
+
+- 2017-05-25 增加小内存服务器内存不足报错处理方法

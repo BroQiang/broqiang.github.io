@@ -91,7 +91,7 @@ $ sudo systemctl enable nginx
 $ sudo systemctl start nginx
 
 # 停止服务
-$ sudo systemctl start nginx
+$ sudo systemctl stop nginx
 ```
 
 ### nginx.conf 配置
