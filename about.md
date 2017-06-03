@@ -5,13 +5,13 @@ description: "个人简历"
 header-img: "img/about-bg.jpg"
 ---
 
-# 马强的个人简历
+# Bro Qiang 的个人简历
 
 本文档由 markdown 文档自动转换生成
 
 ## 基本信息
 
-- 姓名：马强
+- 姓名：*强
 
 - 年龄： 33
 
