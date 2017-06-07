@@ -303,8 +303,6 @@ get/gets key1 key2 ...keyn
 
 - `gets` 和get相同，比get会多flag、bytes和[version] 信息
 
-- `stats cachedump 1` 通过itemid获取所有key
-
 实例：
 
 ```shell
