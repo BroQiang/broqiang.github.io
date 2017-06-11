@@ -8,7 +8,8 @@ tags:
 author: 'Bro Qiang'
 ---
 
-## Linux 编译安装 PHP 7.1.5
+## Linux 编译安装 PHP 7.1.6
+## Linux 编译安装 PHP 7.1.6
 
 - 此文档是在 Ubuntu 16.10 环境下测试编写, 理论上也支持 CentOS 7, 除了依赖关系,其他步骤相同即可
 
@@ -20,10 +21,12 @@ author: 'Bro Qiang'
 
 ```shell
 # 下载安装包
-$ wget http://cn2.php.net/distributions/php-7.1.5.tar.gz
+$ wget http://cn2.php.net/distributions/php-7.1.6.tar.gz
+$ wget http://cn2.php.net/distributions/php-7.1.6.tar.gz
 
 # 解压到src目录
-$ sudo tar xzvf php-7.1.5.tar.gz -C /usr/local/src/
+$ sudo tar xzvf php-7.1.6.tar.gz -C /usr/local/src/
+$ sudo tar xzvf php-7.1.6.tar.gz -C /usr/local/src/
 ```
 
 ### 解决依赖关系
@@ -55,7 +58,8 @@ $ sudo useradd -M -s /sbin/nologin www
 
 ```shell
 # 进入到源码存放目录
-$ cd /usr/local/src/php-7.1.5/
+$ cd /usr/local/src/php-7.1.6/
+$ cd /usr/local/src/php-7.1.6/
 
 # 配置 makefile
 # 需要注意,此处将 mysql 编译进来了,需要保证 Mysql 已经安装配置好
@@ -175,5 +179,7 @@ $ php -S localhost:8888
 
 
 ## 更新记录
+
+- 2017-06-11 更新到当前最新的 PHP 7.1.6
 
 - 2017-05-25 更新到当前最新的 PHP 7.1.5

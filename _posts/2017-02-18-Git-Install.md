@@ -67,7 +67,7 @@ $ source /etc/profile.d/git.sh
 ## 安装完成后测试
 
 ```shell
-$ git --verion
+$ git --version
 ```
 
 全部打印出版本信息，安装完成
@@ -99,11 +99,13 @@ $ git config --global credential.helper store
 $ git config --global credential.helper cache
 
 # 指定临时保存时间
-git config credential.helper 'cache --timeout=3600'
+$ git config credential.helper 'cache --timeout=3600'
 ```
 
 
 
 ## 更新日志
+
+- 2017-06-11 更正书写错误
 
 - 2017-05-25 更新到当前最新版本 `2.9.4`
