@@ -9,7 +9,6 @@ author: 'Bro Qiang'
 ---
 
 ## Linux 编译安装 PHP 7.1.6
-## Linux 编译安装 PHP 7.1.6
 
 - 此文档是在 Ubuntu 16.10 环境下测试编写, 理论上也支持 CentOS 7, 除了依赖关系,其他步骤相同即可
 

@@ -75,7 +75,7 @@ $ sudo cmake .. -DCMAKE_INSTALL_PREFIX=/usr/local/mysql -DDEFAULT_CHARSET=utf8mb
     -DWITH_BOOST=/usr/local/src/mysql-5.7.18/boost/boost_1_59_0 -DMYSQL_DATADIR=/data/mysql/data
 
 # 编译，小内存云主机会出问题，看后面的处理办法
-$ make
+$ sudo make
 
 # 安装到 /usr/local/mysql
 $ make install
