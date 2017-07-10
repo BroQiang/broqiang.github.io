@@ -21,10 +21,8 @@ author: 'Bro Qiang'
 ```shell
 # 下载安装包
 $ wget http://cn2.php.net/distributions/php-7.1.6.tar.gz
-$ wget http://cn2.php.net/distributions/php-7.1.6.tar.gz
 
 # 解压到src目录
-$ sudo tar xzvf php-7.1.6.tar.gz -C /usr/local/src/
 $ sudo tar xzvf php-7.1.6.tar.gz -C /usr/local/src/
 ```
 
@@ -39,7 +37,7 @@ $ sudo apt install -y libxml2-dev libssl-dev libcurl4-gnutls-dev libjpeg-dev lib
 
 
 # CentOS 7 执行下面 命令
-$ sudo yum install libxml2 libxml2-devel libcurl libcurl-devel libwebp libwebp-devel \
+$ sudo yum -y install libxml2 libxml2-devel libcurl libcurl-devel libwebp libwebp-devel openssl-devel\
         libjpeg* libpng libpng-devel openldap-devel openldap libmcrypt libmcrypt-devel freetype-devel
 
 ```
@@ -82,9 +80,9 @@ $ sudo make install
 ```shell
 # 复制默认配置文件
 $ sudo cp php.ini-production /usr/local/php/etc/php.ini
-$ sudo cp sapi/fpm/init.d.php-fpm /etc/init.d/php-fpm
-$ sudo cp /usr/local/php/etc/php-fpm.conf.default /usr/local/php/etc/php-fpm.conf
-$ sudo cp /usr/local/php/etc/php-fpm.d/www.conf.default /usr/local/php/etc/php-fpm.d/www.conf
+sudo cp sapi/fpm/init.d.php-fpm /etc/init.d/php-fpm
+sudo cp /usr/local/php/etc/php-fpm.conf.default /usr/local/php/etc/php-fpm.conf
+sudo cp /usr/local/php/etc/php-fpm.d/www.conf.default /usr/local/php/etc/php-fpm.d/www.conf
 
 # 为启动脚本增加权限
 $ sudo chmod +x /etc/init.d/php-fpm

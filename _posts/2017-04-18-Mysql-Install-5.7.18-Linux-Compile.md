@@ -143,14 +143,8 @@ pid-file=/data/mysql/run/mysqld.pid
 
 
 ```shell
-# 创建数据仓库目录
-$ sudo mkdir -p /data/mysql/data/
-
-# 创建日志目录
-$ sudo mkdir -p /data/mysql/log/
-
-# 创建保存 PID 目录
-$ sudo mkdir -p /data/mysql/run/
+# 创建数据仓库目录,日志目录,PID 目录
+$ sudo mkdir -p /data/mysql/{data,log,run}
 
 # 将 mysql 目录权限改成 mysql 用户
 $ sudo chown -R mysql:mysql /data/mysql

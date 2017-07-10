@@ -69,12 +69,16 @@ author: 'Bro Qiang'
 
     `chmod +x ~/.config/sublime-text-3/Packages/InputHelper/lib/linux_text_input_gui.py`
 
-#### 安装 python-gtk2-dev 包
+#### 安装 python gtk2  包
 
 这个插件依赖这个包，如果系统中没有就要安装，否则也是不能使用
 
 ```shell
-$ sudo apt install python-gtk2-dev -y
+# Ubuntu 
+$ sudo apt install -y python-gtk2-dev
+
+# Fedora 
+# $ sudo dnf install -y pygtk2
 ```
 
 

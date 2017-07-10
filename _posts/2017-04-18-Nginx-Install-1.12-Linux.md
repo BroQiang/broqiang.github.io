@@ -107,7 +107,7 @@ $ sudo systemctl stop nginx
 ```shell
 # 修改配置前先将原本的备份一份, 要养成良好习惯,因为谁也不能保证自己的修改就是 100% 正确, 必要时候要能够还原
 $ cd /usr/local/nginx/conf/
-$ sudo mv nginx.conf nginx.conf_20170418_bak
+$ sudo mv nginx.conf nginx.conf_`date +%Y-%m-%d`_bak
 
 $ sudo vim /usr/local/nginx/conf/nginx.conf
 ```
@@ -169,7 +169,7 @@ $ sudo mkdir /usr/local/nginx/conf/conf.d
 $ cd /usr/local/nginx/conf/conf.d
 
 # 有新的虚拟主机就再创建一个 xxx.conf 即可
-$ sudo vim test.conf
+$ sudo vim /usr/local/nginx/conf/conf.d/test.conf
 ```
 
 
