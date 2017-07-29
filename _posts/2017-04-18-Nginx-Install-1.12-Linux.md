@@ -55,6 +55,10 @@ sudo ./configure --prefix=/usr/local/nginx --user=www --group=www --with-select_
     --with-poll_module --with-http_ssl_module --with-pcre --with-pcre-jit --with-zlib= \
     --pid-path=/usr/local/nginx/run/nginx.pid
 
+# 如果是使用的 gcc 7，如 Fedora 26 （我就是这个版本出现的问题）
+# 加上这个参数:  --with-cc-opt="-Wno-error"
+# 简单解释下，查找的资料说 gcc 7 检察的更加严格，所以原本的编译就编译不过去了
+
 # 编译 & 安装
 $ sudo make
 $ sudo make install

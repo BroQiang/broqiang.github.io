@@ -90,8 +90,8 @@ sudo dnf install -y sogoupinyin-*
 不过不知道是什么原因，可能版本不兼容吧（没去研究），偶尔会崩溃，处理方式： 通过 `Ctrl+Alt+F2` 切换到字符界面，输入下面命令
 
 ```shell
-ps aux | grep sogou-qimpanel | grep -v grep | awk '{print $2}' | xargs kill
-ps axu | grep 'fcitx -D' | grep -v grep | awk '{print $2}' | xargs kill
+ps aux | grep sogou-qimpanel | grep -v grep | awk '{print $2}' | xargs kill -9
+ps axu | grep 'fcitx -D' | grep -v grep | awk '{print $2}' | xargs kill -9
 ```
 
 懒得去研究到底为什么会出现这个问题了，还好只是偶尔出现，
