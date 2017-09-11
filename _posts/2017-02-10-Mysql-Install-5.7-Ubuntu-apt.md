@@ -23,7 +23,9 @@ author: 'Bro Qiang'
 
 - 查询当前字符集
 
-`mysql> SHOW VARIABLES WHERE Variable_name LIKE 'character\_set\_%' OR Variable_name LIKE 'collation%';`
+```mysql
+mysql> SHOW VARIABLES WHERE Variable_name LIKE 'character\_set\_%' OR Variable_name LIKE 'collation%';`
+```
 
 - 设置字符集
 
