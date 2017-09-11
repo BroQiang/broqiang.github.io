@@ -29,8 +29,8 @@ apm install qiniu-uploader
 
 ![打开设置](http://image.broqiang.com/2b0696ee14aa2f8a2f19bb1be2ddacbb.png)
 
-然后分别输入 `markdown-assistant` 和 `qiniu-uploaderqiniu-uploader`，搜索插件安装，如图
-然后分别输入 `markdown-assistant` 和 `qiniu-uploaderqiniu-uploader`，搜索插件安装，如图
+然后分别输入 `markdown-assistant` 和 `qiniu-uploader`，搜索插件安装，如图
+然后分别输入 `markdown-assistant` 和 `qiniu-uploader`，搜索插件安装，如图
 
 ![安装插件](http://image.broqiang.com/9ed3c936d9e5edf8afb23a57796690e9.png)
 
