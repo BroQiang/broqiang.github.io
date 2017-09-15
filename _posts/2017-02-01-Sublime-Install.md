@@ -117,6 +117,18 @@ $sudo dpki -i sublime-text_build*
 ```
 
 
+### 快捷键备份
+
+```
+[
+    {"keys": ["f9"],"command": "expand_fqcn"}, //自动补全命名空间
+    {"keys": ["f8"],"command": "find_use"}, //自动寻找命名空间
+    {"keys": ["f7"],"command": "insert_php_constructor_property"}, //自动生产构造函数
+    {"keys": ["alt+enter"],"command": "toggle_full_screen"},
+    {"keys": ["ctrl+k","ctrl+m"],"command": "toggle_menu"},
+]
+```
+
 ### License Key
 
 License 来自搜索出来的这篇 [博客](http://blog.csdn.net/hexon804/article/details/50982952)
