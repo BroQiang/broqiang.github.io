@@ -13,12 +13,12 @@ author: 'Bro Qiang'
 
 用过几个编辑器，比如Atom（非常强大，也非常喜欢，尤其是用来写markdown）,不过对不是对PHP不友好，就是对Linux不友好，最后没办法，还是转回了Sublime，在Linux下，他对中文不友好，有个替代方案，凑合用，还好写代码的时候就是表单注释之类的用到中文，不算太多，还能凑合用
 
-### 获取软件
+## 获取软件
 
 官方下载：　[http://www.sublimetext.com/3](http://www.sublimetext.com/3)
 
 
-### 安装
+## 安装
 
 - Ubuntu直接下载Deb包
     ```shell
@@ -29,7 +29,7 @@ $sudo dpki -i sublime-text_build*
 - 其他版本，直接解压就可以用了
 
 
-### 安装包控制器
+## 安装包控制器
 
 这个是Sublime的精髓,后面安装的时候都会用到
 
@@ -42,7 +42,7 @@ $sudo dpki -i sublime-text_build*
     回车,等待安装成功的提示即可
 
 
-### 安装字体
+## 安装字体
 
 推荐Google的`Roboto Mono`字体
 
@@ -54,7 +54,7 @@ $sudo dpki -i sublime-text_build*
 
     配置文件中加入`"font_face": "Roboto Mono",`
 
-### 安装配置主题
+## 安装配置主题
 
 - 通过包控制器安装 `Material Theme`
 
@@ -86,7 +86,7 @@ $sudo dpki -i sublime-text_build*
             在找到行下面加入`"font.size": 14,` 字体大小看个人喜好配置
             
 
-### 配置文件备份
+## 配置文件备份
 
 此配置是我当前正在使用的,留作备份,下次安装的时候可以快速恢复
 
@@ -95,10 +95,10 @@ $sudo dpki -i sublime-text_build*
     "color_scheme": "Packages/Material Theme/schemes/Material-Theme.tmTheme",
     "expand_tabs_on_save": true,
     "font_face": "Roboto Mono",
-    "font_size": 12,
+    "font_size": 15,
     "ignored_packages":
     [
-        "Vintage"
+        // "Vintage"
     ],
     "line_padding_bottom": 6,
     "line_padding_top": 6,
@@ -107,6 +107,7 @@ $sudo dpki -i sublime-text_build*
     "material_theme_big_fileicons": true,
     "material_theme_bold_tab": true,
     "material_theme_bright_scrollbars": true,
+    "material_theme_contrast_mode": true,
     "material_theme_small_statusbar": true,
     "material_theme_small_tab": true,
     "tab_size": 4,
@@ -117,7 +118,7 @@ $sudo dpki -i sublime-text_build*
 ```
 
 
-### 快捷键备份
+## 快捷键备份
 
 ```
 [
@@ -129,7 +130,7 @@ $sudo dpki -i sublime-text_build*
 ]
 ```
 
-### License Key
+## License Key
 
 Sublime Text 3 build 3143 LICENSE，来自 [github](https://gist.github.com/jochemstoel/29205b69712924c7ba8d3f83b6dd0dd9) 
 

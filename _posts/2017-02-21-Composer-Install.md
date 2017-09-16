@@ -24,7 +24,7 @@ author: 'Bro Qiang'
 
 ```shell
 # 官方下载
-$ wget https://getcomposer.org/download/1.4.2/composer.phar -O composer
+$ wget https://getcomposer.org/download/1.5.2/composer.phar -O composer
 
 # 我的码云仓库下载
 # $ wget https://git.oschina.net/BroQiang/software/raw/master/composer.phar -O composer

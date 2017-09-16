@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Linux 编译安装 Mysql5.7.18'
+title: 'Linux 编译安装 Mysql5.7'
 date: '2017-04-18'
 header-img: "img/post-bg-unix.jpg"
 tags:
@@ -8,7 +8,7 @@ tags:
 author: 'Bro Qiang'
 ---
 
-## Linux 编译安装 Mysql5.7.18
+## Linux 编译安装 Mysql5.7
 
 Ubuntu 下快速安装直接 apt 方式即可, 一般的开发环境也足够了
 
@@ -25,17 +25,17 @@ Ubuntu 下快速安装直接 apt 方式即可, 一般的开发环境也足够了
 
 - 获取 Mysql
 
-    当前的最新版本是 5.7.18 ,有了集成 boost 的版本, 这个比较友善 5.7.17 的时候还要单独去下载 80M 左右的 boost
+    当前的最新版本是 5.7.19 ,有了集成 boost 的版本, 这个比较友善 5.7.17 的时候还要单独去下载 80M 左右的 boost
 
     ```shell
     # 下载源码包
-    $ wget https://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-boost-5.7.18.tar.gz
+    $ wget https://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-boost-5.7.19.tar.gz
 
     # 解压到src
-    $ sudo tar xzvf mysql-boost-5.7.18.tar.gz -C /usr/local/src/
+    $ sudo tar xzvf mysql-boost-5.7.19.tar.gz -C /usr/local/src/
 
     # 修改权限
-    $ sudo chown bro:bro /usr/local/src/mysql-5.7.18
+    $ sudo chown bro:bro /usr/local/src/mysql-5.7.19
 
     ```
 
@@ -61,7 +61,7 @@ Ubuntu 下快速安装直接 apt 方式即可, 一般的开发环境也足够了
 
 ```shell
 # 进入到之前解压的源码包目录
-$ cd /usr/local/src/mysql-5.7.18/
+$ cd /usr/local/src/mysql-5.7.19/
 
 # 创建编译后的代码保存位置
 $ sudo mkdir build
@@ -72,7 +72,7 @@ $ cd build
 # -DCMAKE_INSTALL_PREFIX= 指定安装目录
 # -DEFAULT_CHARSET= 指定默认字符集，如果不设置，安装完成后也可以配置
 $ sudo cmake .. -DCMAKE_INSTALL_PREFIX=/usr/local/mysql -DDEFAULT_CHARSET=utf8mb4 \
-    -DWITH_BOOST=/usr/local/src/mysql-5.7.18/boost/boost_1_59_0 -DMYSQL_DATADIR=/data/mysql/data
+    -DWITH_BOOST=/usr/local/src/mysql-5.7.19/boost/boost_1_59_0 -DMYSQL_DATADIR=/data/mysql/data
 
 # 编译，小内存云主机会出问题，看后面的处理办法
 $ sudo make
@@ -261,4 +261,10 @@ $ free -m
 
 ## 更新日志
 
-- 2017-05-25 增加小内存服务器内存不足报错处理方法
+#### 2017-09-16
+
+更新 Mysql 版本 从 5.7.18 到 5.7.19
+
+#### 2017-05-25 
+
+增加小内存服务器内存不足报错处理方法
