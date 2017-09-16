@@ -46,7 +46,10 @@ Ubuntu 下快速安装直接 apt 方式即可, 一般的开发环境也足够了
     $ sudo apt install -y build-essential cmake libncurses5-dev bison
 
     # CentoOS 用下面方式安装依赖关系
-    # $ sudo yum install gcc gcc-c++ cmake bison bison-devel ncurses ncurses-devel autoconf
+    # sudo yum install -y gcc gcc-c++ cmake bison bison-devel ncurses ncurses-devel autoconf
+
+    # Fedora
+    # sudo dnf install -y gcc gcc-c++ cmake bison bison-devel ncurses ncurses-devel autoconf
     ```
 
 - 创建守护进程用户
@@ -76,6 +79,9 @@ $ sudo cmake .. -DCMAKE_INSTALL_PREFIX=/usr/local/mysql -DDEFAULT_CHARSET=utf8mb
 
 # 编译，小内存云主机会出问题，看后面的处理办法
 $ sudo make
+
+# 如果配置高可以添加 -j number 参数，增加编译速度
+# 如： CPU 是8核的，可以加上 make -j 6
 
 # 安装到 /usr/local/mysql
 $ make install

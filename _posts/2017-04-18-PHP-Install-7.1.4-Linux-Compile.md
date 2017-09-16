@@ -8,25 +8,25 @@ tags:
 author: 'Bro Qiang'
 ---
 
-## Linux 编译安装 PHP 7.1.7
+# Linux 编译安装 PHP 7.1
 
-- 此文档是在 Ubuntu 16.10 环境下测试编写, 理论上也支持 CentOS 7, 除了依赖关系,其他步骤相同即可
+- 此文档支持 Ubuntu 16.10 / CentOS 7 / Fedora 26 , 除了依赖关系,其他步骤相同即可
 
 - 如参考此文档遇到问题,可以留言
 
 - 编译的时候编译了 Mysql 支持,安装前要保证 Mysql 安装正确, 可以参考此博客中的 Mysql 安装
 
-### 准备安装包
+## 准备安装包
 
 ```shell
 # 下载安装包
-$ wget http://cn2.php.net/distributions/php-7.1.7.tar.gz
+$ wget http://cn2.php.net/distributions/php-7.1.9.tar.gz
 
 # 解压到src目录
-$ sudo tar xzvf php-7.1.7.tar.gz -C /usr/local/src/
+$ sudo tar xzvf php-7.1.9.tar.gz -C /usr/local/src/
 ```
 
-### 解决依赖关系
+## 解决依赖关系
 
 ```shell
 
@@ -37,25 +37,31 @@ $ sudo apt install -y libxml2-dev libssl-dev libcurl4-gnutls-dev libjpeg-dev lib
 
 
 # CentOS 7 执行下面 命令
-$ sudo yum -y install libxml2 libxml2-devel libcurl libcurl-devel libwebp libwebp-devel openssl-devel\
-        libjpeg* libpng libpng-devel openldap-devel openldap libmcrypt libmcrypt-devel freetype-devel
+sudo yum -y install libxml2 libxml2-devel libcurl libcurl-devel libwebp \
+        libwebp-devel openssl-devel libjpeg* libpng libpng-devel \
+        openldap-devel openldap libmcrypt libmcrypt-devel freetype-devel
+
+# Fedora 26 
+sudo dnf -y install libxml2 libxml2-devel libcurl libcurl-devel libwebp \
+        libwebp-devel openssl-devel libjpeg* libpng libpng-devel \
+        openldap-devel openldap libmcrypt libmcrypt-devel freetype-devel
 
 ```
 
 
-### 创建守护进程用户
+## 创建守护进程用户
 
 ```shell
 $ sudo useradd -M -s /sbin/nologin www
 ```
 
-### 编译安装
+## 编译安装
 
 此处只是常用的扩展, 如果需要什么扩展后期再安装也可以
 
 ```shell
 # 进入到源码存放目录
-$ cd /usr/local/src/php-7.1.7/
+$ cd /usr/local/src/php-7.1.9/
 
 # 配置 makefile
 # 需要注意,此处将 mysql 编译进来了,需要保证 Mysql 已经安装配置好
@@ -72,30 +78,25 @@ $ sudo make install
 ```
 
 
-### 初始化配置
+## 初始化配置
 
 [详细参数配置参考](http://php.net/manual/zh/install.fpm.configuration.php)
 
 ```shell
 # 复制默认配置文件
-$ sudo cp php.ini-production /usr/local/php/etc/php.ini
-sudo cp sapi/fpm/init.d.php-fpm /etc/init.d/php-fpm
+sudo cp php.ini-production /usr/local/php/etc/php.ini
+sudo cp sapi/fpm/php-fpm.service /lib/systemd/system 
 sudo cp /usr/local/php/etc/php-fpm.conf.default /usr/local/php/etc/php-fpm.conf
 sudo cp /usr/local/php/etc/php-fpm.d/www.conf.default /usr/local/php/etc/php-fpm.d/www.conf
 
-# 为启动脚本增加权限
-$ sudo chmod +x /etc/init.d/php-fpm
-
 # 配置开机自动启动
-# Ubuntu 用下面命令
 $ sudo systemctl enable php-fpm
-
-# CentOS7 用下面命令
-# sudo chkconfig php-fpm on
 
 ```
 
-### 配置时区
+## php.ini 配置
+
+#### 时区配置
 
 > 这个还是很有必要的, 如果 php.ini 中没有配置, 程序也没有初始化, 就会出现莫名其妙的问题了
 > 
@@ -111,10 +112,23 @@ $ sudo vim /usr/local/php/etc/php.ini
 # 改成
 date.timezone = Asia/Shanghai
 
+# 或者 两种配置选其中一种方式即可
+date.timezone = PRC
 ```
 
+#### 配置默认的上传数据大小
 
-### 配置环境变量
+这个参数是可选的，非必须，根据实际情况去配置
+
+```shell
+# 修改默认上传文件的大小，这个默认是2M，可以根据实际的项目需求去设置
+upload_max_filesize = 2M
+
+# 允许的最大的 post 数据，默认是 8M，一般都够了，如果不够的话根据实际情况去调整
+post_max_size = 8M
+```
+
+## 配置环境变量
 
 ```shell
 $ sudo vim /etc/profile.d/php.sh
@@ -130,7 +144,7 @@ $ source /etc/profile.d/php.sh
 $ php --version
 ```
 
-### 测试 phpinfo
+## 测试 phpinfo
 
 创建 test 目录
 
@@ -164,7 +178,7 @@ $ php -S localhost:8888
 
 太多了,直接去看phpinfo输出结果查看
 
-### 额外的配置
+## 额外的配置
 
 - readline 扩展
 
@@ -176,8 +190,20 @@ $ php -S localhost:8888
 
 ## 更新记录
 
-- 2017-06-11 更新到当前最新的 PHP 7.1.7
+#### 2017-09-16
 
-- 2017-06-11 更新到当前最新的 PHP 7.1.6
+- 更新到当前最新的 PHP 7.1.9
 
-- 2017-05-25 更新到当前最新的 PHP 7.1.5
+- 修改启动脚本，从 init 脚本改称 systemd 配置
+
+#### 2017-06-11 
+
+更新到当前最新的 PHP 7.1.8
+
+#### 2017-06-11 
+
+更新到当前最新的 PHP 7.1.6
+
+#### 2017-05-25 
+
+更新到当前最新的 PHP 7.1.5
