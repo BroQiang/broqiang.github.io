@@ -34,22 +34,6 @@ layout: default
             <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
 				{{ content }}
-
-                <hr>
-
-                <!-- 网易评论框 start -->
-                
-                <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
-                <script>
-                  var cloudTieConfig = {
-                    url: document.location.href, 
-                    sourceId: "",
-					productKey: {{site.cloud_tie_public_key}},
-                    target: "cloud-tie-wrapper"
-                  };
-                </script>
-                <script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
-                 <!-- 网易评论框 end -->
         </div>
     </div>
 </article>
