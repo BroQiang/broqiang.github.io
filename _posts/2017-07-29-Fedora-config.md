@@ -54,6 +54,17 @@ sudo sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/selinux/config
 sudo dnf -y install vim numix-* gnome-tweak-tool
 ```
 
+vim 环境变量
+
+```shell
+:set nu
+:set tabstop=4
+:set expandtab
+:set autoindent
+:set shiftwidth=4
+:set smartindent
+```
+
 ## 配置桌面环境
 ```shell
 gnome-tweak-tool
