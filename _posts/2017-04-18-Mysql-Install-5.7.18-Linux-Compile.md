@@ -20,36 +20,36 @@ author: 'Bro Qiang'
 
     当前的最新版本是 5.7.20 ,有了集成 boost 的版本, 这个比较友善 5.7.17 的时候还要单独去下载 80M 左右的 boost
 
-    ```shell
-    # 下载源码包
-    $ wget https://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-boost-5.7.20.tar.gz
+```shell
+# 下载源码包
+$ wget https://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-boost-5.7.20.tar.gz
 
-    # 解压到src
-    $ sudo tar xzvf mysql-boost-5.7.20.tar.gz -C /usr/local/src/
+# 解压到src
+$ sudo tar xzvf mysql-boost-5.7.20.tar.gz -C /usr/local/src/
 
-    # 修改权限
-    $ sudo chown bro:bro /usr/local/src/mysql-5.7.20
+# 修改权限
+$ sudo chown bro:bro /usr/local/src/mysql-5.7.20
 
-    ```
+```
 
 - 安装依赖关系
 
-    ```shell
-    # 安装开发工具包, 一般默认就会已经安装了
-    $ sudo apt install -y build-essential cmake libncurses5-dev bison
+```shell
+# 安装开发工具包, 一般默认就会已经安装了
+$ sudo apt install -y build-essential cmake libncurses5-dev bison
 
-    # CentoOS 用下面方式安装依赖关系
-    # sudo yum install -y gcc gcc-c++ cmake bison bison-devel ncurses ncurses-devel autoconf
+# CentoOS 用下面方式安装依赖关系
+# sudo yum install -y gcc gcc-c++ cmake bison bison-devel ncurses ncurses-devel autoconf
 
-    # Fedora
-    # sudo dnf install -y gcc gcc-c++ cmake bison bison-devel ncurses ncurses-devel autoconf
-    ```
+# Fedora
+# sudo dnf install -y gcc gcc-c++ cmake bison bison-devel ncurses ncurses-devel autoconf
+```
 
 - 创建守护进程用户
 
-    ```shell
-    $ sudo useradd -M -s /sbin/nologin mysql
-    ```
+```shell
+$ sudo useradd -M -s /sbin/nologin mysql
+```
 
 ### 编译安装
 
@@ -145,9 +145,6 @@ pid-file=/data/mysql/run/mysqld.pid
 # 创建数据仓库目录,日志目录,PID 目录
 $ sudo mkdir -p /data/mysql/{data,log,run}
 
-# 将 mysql 目录权限改成 mysql 用户
-$ sudo chown -R mysql:mysql /data/mysql
-
 # 初始化, 需要注意,配置文件及目录一定要正确
 $ sudo /usr/local/mysql/bin/mysqld --defaults-file=/usr/local/mysql/etc/my.cnf  --initialize --user=mysql
 
@@ -184,7 +181,7 @@ Mysql 5.7 开始,初始化数据库之后不再是空的root密码,而是在日�
 
 安装完之后需要想默认给的密码修改
 
-```shell
+```
 # 查询默认密码, root@localhost: 后面是密码
 $ sudo grep 'root'@'localhost' /data/mysql/log/mysqld.log 
 
@@ -202,6 +199,8 @@ mysql> select user,host from mysql.user;
 # 顺便查询一下字符集, 看看配置文件中的配置是否生效
 mysql> show variables like '%char%';
 # 正常应该显示下面结果
+```
+
 +--------------------------+----------------------------------+
 | Variable_name            | Value                            |
 +--------------------------+----------------------------------+
