@@ -90,7 +90,7 @@ $sudo dpki -i sublime-text_build*
 
 此配置是我当前正在使用的,留作备份,下次安装的时候可以快速恢复
 
-```json
+```
 {
     "color_scheme": "Packages/Material Theme/schemes/Material-Theme.tmTheme",
     "expand_tabs_on_save": true,
@@ -114,7 +114,6 @@ $sudo dpki -i sublime-text_build*
     "theme": "Material-Theme.sublime-theme",
     "translate_tabs_to_spaces": true
 }
-
 ```
 
 
