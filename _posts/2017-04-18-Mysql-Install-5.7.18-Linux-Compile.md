@@ -10,32 +10,25 @@ author: 'Bro Qiang'
 
 ## Linux 编译安装 Mysql5.7
 
-Ubuntu 下快速安装直接 apt 方式即可, 一般的开发环境也足够了
+次文档适用于 Freora 、CentOS、Ubuntu。
 
-个人比较喜欢新版本,一般有新版本就会尝试一下
-
-此文档适用于 Ubuntu 16.10 和 CentOS 7 , 其他版本操作系统未测试
-
-此文档是在Ubuntu 16.10 环境下写的, 理论上 CentOS 7 除了依赖关系不同, 其他步骤相同即可
-
-以后在 CentOS 7 上安装时如遇到不同处会再进行修改,如参考此文档遇到问题也可以留言
-
+经过安装测试的系统： Fedora26、Fedora27、CentOS7、Ubuntu 16.04、Ubuntu 16.10。
 
 ### 安装前准备
 
 - 获取 Mysql
 
-    当前的最新版本是 5.7.19 ,有了集成 boost 的版本, 这个比较友善 5.7.17 的时候还要单独去下载 80M 左右的 boost
+    当前的最新版本是 5.7.20 ,有了集成 boost 的版本, 这个比较友善 5.7.17 的时候还要单独去下载 80M 左右的 boost
 
     ```shell
     # 下载源码包
-    $ wget https://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-boost-5.7.19.tar.gz
+    $ wget https://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-boost-5.7.20.tar.gz
 
     # 解压到src
-    $ sudo tar xzvf mysql-boost-5.7.19.tar.gz -C /usr/local/src/
+    $ sudo tar xzvf mysql-boost-5.7.20.tar.gz -C /usr/local/src/
 
     # 修改权限
-    $ sudo chown bro:bro /usr/local/src/mysql-5.7.19
+    $ sudo chown bro:bro /usr/local/src/mysql-5.7.20
 
     ```
 
@@ -64,7 +57,7 @@ Ubuntu 下快速安装直接 apt 方式即可, 一般的开发环境也足够了
 
 ```shell
 # 进入到之前解压的源码包目录
-$ cd /usr/local/src/mysql-5.7.19/
+$ cd /usr/local/src/mysql-5.7.20/
 
 # 创建编译后的代码保存位置
 $ sudo mkdir build
@@ -75,7 +68,7 @@ $ cd build
 # -DCMAKE_INSTALL_PREFIX= 指定安装目录
 # -DEFAULT_CHARSET= 指定默认字符集，如果不设置，安装完成后也可以配置
 $ sudo cmake .. -DCMAKE_INSTALL_PREFIX=/usr/local/mysql -DDEFAULT_CHARSET=utf8mb4 \
-    -DWITH_BOOST=/usr/local/src/mysql-5.7.19/boost/boost_1_59_0 -DMYSQL_DATADIR=/data/mysql/data
+    -DWITH_BOOST=/usr/local/src/mysql-5.7.20/boost/boost_1_59_0 -DMYSQL_DATADIR=/data/mysql/data
 
 # 编译，小内存云主机会出问题，看后面的处理办法
 $ sudo make
@@ -266,6 +259,10 @@ $ free -m
 不过这样处理后编译的速度会慢一些，硬件配置就这么多的时候也没办法了，享受慢速吧
 
 ## 更新日志
+
+#### 2017-12-05
+
+更新 Mysql 版本 从 5.7.19 到 5.7.20
 
 #### 2017-09-16
 
