@@ -199,7 +199,6 @@ mysql> select user,host from mysql.user;
 # 顺便查询一下字符集, 看看配置文件中的配置是否生效
 mysql> show variables like '%char%';
 # 正常应该显示下面结果
-```
 
 +--------------------------+----------------------------------+
 | Variable_name            | Value                            |
