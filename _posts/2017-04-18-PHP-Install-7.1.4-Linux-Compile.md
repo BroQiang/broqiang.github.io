@@ -8,9 +8,9 @@ tags:
 author: 'Bro Qiang'
 ---
 
-# Linux 编译安装 PHP 7.1
+# Linux 编译安装 PHP 7.2.0
 
-- 此文档支持 Ubuntu 16.10 / CentOS 7 / Fedora 26 , 除了依赖关系,其他步骤相同即可
+- 此文档支持 Ubuntu 16.10 / Ubuntu 17.10 / CentOS 7 / Fedora 26 / Fedora 27, 除了依赖关系,其他步骤相同即可
 
 - 如参考此文档遇到问题,可以留言
 
@@ -20,10 +20,10 @@ author: 'Bro Qiang'
 
 ```shell
 # 下载安装包
-$ wget http://cn2.php.net/distributions/php-7.1.9.tar.gz
+wget http://cn2.php.net/distributions/php-7.2.0.tar.gz
 
 # 解压到src目录
-$ sudo tar xzvf php-7.1.9.tar.gz -C /usr/local/src/
+sudo tar xzvf php-7.2.0.tar.gz -C /usr/local/src/
 ```
 
 ## 解决依赖关系
@@ -31,28 +31,27 @@ $ sudo tar xzvf php-7.1.9.tar.gz -C /usr/local/src/
 ```shell
 
 # Ubuntu 16.10 执行下面命令
-$ sudo apt install -y libxml2-dev libssl-dev libcurl4-gnutls-dev libjpeg-dev libpng-dev \
-    libfreetype6-dev libmcrypt-dev
+sudo apt install -y libxml2-dev libssl-dev libcurl4-gnutls-dev libjpeg-dev libpng-dev \
+    libfreetype6-dev libmcrypt-dev libreadline-dev re2c
 
 
 
 # CentOS 7 执行下面 命令
 sudo yum -y install libxml2 libxml2-devel libcurl libcurl-devel libwebp \
-        libwebp-devel openssl-devel libjpeg* libpng libpng-devel \
-        openldap-devel openldap libmcrypt libmcrypt-devel freetype-devel
+        libwebp-devel openssl-devel libjpeg* libpng libpng-devel readline-devel \
+        openldap-devel openldap libmcrypt libmcrypt-devel freetype-devel re2c
 
-# Fedora 26 
+# Fedora 26
 sudo dnf -y install libxml2 libxml2-devel libcurl libcurl-devel libwebp \
-        libwebp-devel openssl-devel libjpeg* libpng libpng-devel \
-        openldap-devel openldap libmcrypt libmcrypt-devel freetype-devel
+        libwebp-devel openssl-devel libjpeg* libpng libpng-devel readline-devel \
+        openldap-devel openldap libmcrypt libmcrypt-devel freetype-devel re2c
 
 ```
-
 
 ## 创建守护进程用户
 
 ```shell
-$ sudo useradd -M -s /sbin/nologin www
+sudo useradd -M -r -s /sbin/nologin www
 ```
 
 ## 编译安装
@@ -61,20 +60,21 @@ $ sudo useradd -M -s /sbin/nologin www
 
 ```shell
 # 进入到源码存放目录
-$ cd /usr/local/src/php-7.1.9/
+cd /usr/local/src/php-7.2.0/
 
 # 配置 makefile
 # 需要注意,此处将 mysql 编译进来了,需要保证 Mysql 已经安装配置好
-$ sudo ./configure --prefix=/usr/local/php --with-config-file-path=/usr/local/php/etc \
-    --with-mysqli=/usr/local/mysql/bin/mysql_config --with-pdo-mysql=/usr/local/mysql \
-    --with-mysql-sock=/tmp/mysql.sock --enable-sockets --enable-zip \
-    --with-fpm-user=www --with-fpm-group=www --enable-fpm --enable-gd-native-ttf --enable-gd-jis-conv \
-    --with-jpeg-dir --with-freetype-dir --with-gd --with-curl --with-mcrypt --with-openssl --with-mhash \
-    --with-xmlrpc --enable-ftp --enable-bcmath --enable-shmop --enable-sysvsem --enable-soap \
-    --enable-inline-optimization --enable-mbregex --enable-mbstring --enable-pcntl --with-zlib
 
-$ sudo make
-$ sudo make install
+sudo ./configure --prefix=/usr/local/php --with-config-file-path=/usr/local/php/etc \
+--with-mysqli=/usr/local/mysql/bin/mysql_config --with-pdo-mysql=/usr/local/mysql \
+--with-mysql-sock=/tmp/mysql.sock --enable-sockets --enable-zip --enable-fpm \
+--with-fpm-user=www --with-fpm-group=www  --with-zlib --enable-pcntl \
+--with-jpeg-dir --with-freetype-dir --with-gd --with-curl --with-openssl --with-mhash \
+--with-xmlrpc --enable-ftp --enable-bcmath --enable-shmop --enable-sysvsem --enable-soap \
+--enable-inline-optimization --enable-mbregex --enable-mbstring --with-readline
+
+sudo make
+sudo make install
 ```
 
 
@@ -85,12 +85,12 @@ $ sudo make install
 ```shell
 # 复制默认配置文件
 sudo cp php.ini-production /usr/local/php/etc/php.ini
-sudo cp sapi/fpm/php-fpm.service /lib/systemd/system 
+sudo cp sapi/fpm/php-fpm.service /lib/systemd/system
 sudo cp /usr/local/php/etc/php-fpm.conf.default /usr/local/php/etc/php-fpm.conf
 sudo cp /usr/local/php/etc/php-fpm.d/www.conf.default /usr/local/php/etc/php-fpm.d/www.conf
 
 # 配置开机自动启动
-$ sudo systemctl enable php-fpm
+sudo systemctl enable php-fpm
 
 ```
 
@@ -99,16 +99,16 @@ $ sudo systemctl enable php-fpm
 #### 时区配置
 
 > 这个还是很有必要的, 如果 php.ini 中没有配置, 程序也没有初始化, 就会出现莫名其妙的问题了
-> 
+>
 > 养成习惯,安装完了就给他配置上即可
- 
+
 根据项目实际去配置, 一般都是中国时区 `Asia/Shanghai`, [可以配置的时区](http://php.net/manual/zh/timezones.php)
 
 ```shell
-$ sudo vim /usr/local/php/etc/php.ini
+sudo vim /usr/local/php/etc/php.ini
 
 # 将下面的
-;date.timezone = 
+;date.timezone =
 # 改成
 date.timezone = Asia/Shanghai
 
@@ -131,17 +131,17 @@ post_max_size = 8M
 ## 配置环境变量
 
 ```shell
-$ sudo vim /etc/profile.d/php.sh
+sudo vim /etc/profile.d/php.sh
 
 # 写入下面内容
 export PHP_PATH=/usr/local/php
 export PATH=$PATH:$PHP_PATH/bin
 
 # 生效, 桌面环境最好注销再登录
-$ source /etc/profile.d/php.sh
+source /etc/profile.d/php.sh
 
 # 测试, 输入下面内容,显示版本信息
-$ php --version
+php --version
 ```
 
 ## 测试 phpinfo
@@ -149,7 +149,7 @@ $ php --version
 创建 test 目录
 
 ```shell
-$ mkdir ~/test
+mkdir ~/test
 ```
 
 在目录下创建 `index.php` 文件,写入下面内容
@@ -169,7 +169,7 @@ $ mkdir ~/test
 
 # -S 参数就是运行内置的web服务, 后面跟的是 地址:端口号
 # 如果想用80端口就要加上sudo,用root权限执行
-$ php -S localhost:8888
+php -S localhost:8888
 ```
 
 此时可以在浏览器地址栏输入 `http://localhost:8888/` , 查看结果
@@ -183,12 +183,16 @@ $ php -S localhost:8888
 - readline 扩展
 
     `--with-readline` 可以在终端使用 -a(--interactive) 模式，一般只有开发的时候才用得到
-    
+
     安装 `libreadline-dev` (Ubuntu)/`readline-devel` (CentOS) 扩展
     编译PHP的时候加上 --with-readline 参数
 
 
 ## 更新记录
+
+#### 2017-12-27
+
+更新到当前最新版本 PHP 7.2.0，调整了几个依赖关系和编译参数
 
 #### 2017-09-16
 
@@ -196,14 +200,14 @@ $ php -S localhost:8888
 
 - 修改启动脚本，从 init 脚本改称 systemd 配置
 
-#### 2017-06-11 
+#### 2017-06-11
 
 更新到当前最新的 PHP 7.1.8
 
-#### 2017-06-11 
+#### 2017-06-11
 
 更新到当前最新的 PHP 7.1.6
 
-#### 2017-05-25 
+#### 2017-05-25
 
 更新到当前最新的 PHP 7.1.5
