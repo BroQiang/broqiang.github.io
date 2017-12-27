@@ -244,7 +244,7 @@ sudo update-grub
 reboot
 ```
 
-## 配置 MySQL PHP Nginx 环境
+## 安装配置 MySQL PHP Nginx 环境
 
 可以使用 [自动安装脚本](https://github.com/BroQiang/lnmp)，自动安装环境，使用的时候注意下 config 文件中的配置，如：操作系统版本、用户等。
 
@@ -256,3 +256,21 @@ reboot
 
 - [Nginx](http://broqiang.com/2017/04/18/Nginx-Install-1.12-Linux/)
 
+
+## 安装 Composer
+
+没有什么特别的，下载下来就可以使用，不过要保证系统中有 PHP CLI 环境。
+
+#### 安装
+```shell
+sudo wget https://getcomposer.org/download/1.5.6/composer.phar -O /usr/local/bin/composer
+sudo chmod +x /usr/local/bin/composer
+```
+
+#### 配置国内镜像
+
+[Composer 中文网](http://www.phpcomposer.com/) 可以在这里看到配置方式，和中文的各种文档。
+
+```shell
+composer config -g repo.packagist composer https://packagist.phpcomposer.com
+````
