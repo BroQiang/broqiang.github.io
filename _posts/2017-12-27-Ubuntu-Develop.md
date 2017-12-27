@@ -128,16 +128,13 @@ git config --global user.name "Bro Qiang"
 git config --global credential.helper store
 
 # 配置 git 别名
-echo -e "\nalias gs='git status'\nalias gaa='git add .'\nalias ga='git add '\n\
-alias gp='git push'\nalias gc='git commit -m '\nalias gl='git log'\n\
-alias grao='git remote add origin '\nalias gpo='git push origin '" >> ~/.bash_aliases
+echo -e "\nalias gs='git status'\nalias gaa='git add .'\nalias ga='git add '\nalias gp='git push'\nalias gc='git commit -m '\nalias gl='git log'\nalias grao='git remote add origin '\nalias gpo='git push origin '" >> ~/.bash_aliases
 ```
 
 ## 配置vim
 
 ```shell
-echo -e ":set nu\n:set tabstop=4\n:set expandtab\n:set autoindent\n\
-:set shiftwidth=4\n:set smartindent" > ~/.vimrc
+echo -e ":set nu\n:set tabstop=4\n:set expandtab\n:set autoindent\n:set shiftwidth=4\n:set smartindent" > ~/.vimrc
 ```
 # 安装 lantern
 
