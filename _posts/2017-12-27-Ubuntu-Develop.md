@@ -226,6 +226,24 @@ chmod +x ~/bin/navicat
 
 前面已经安装了，如果想安装最新版本或者 wps 不能启动，请看 [github](https://github.com/BroQiang/Software_WPS)
 
+## 禁用IPv6
+
+这个看个人看好吧，不禁用也不影响使用，只是查询来的内容会多不少，看起来有点乱，看需求去决定是否禁用。
+
+```shell
+sudo vim /etc/default/grub
+# 找到下面内容
+GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"
+# 讲上面内容替换成
+GRUB_CMDLINE_LINUX_DEFAULT="ipv6.disable=1 quiet splash"
+
+# 更新
+sudo update-grub
+
+# 重启后生效
+reboot
+```
+
 ## 配置 MySQL PHP Nginx 环境
 
 可以使用 [自动安装脚本](https://github.com/BroQiang/lnmp)，自动安装环境，使用的时候注意下 config 文件中的配置，如：操作系统版本、用户等。
