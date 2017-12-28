@@ -60,8 +60,7 @@ sudo apt Update
 
 # 安装软件
 sudo apt install -y gnome-tweak-tool arc-theme numix-icon-theme vim \
-gnome-icon-theme sogoupinyin wps-office git net-tools shutter kazam \
-ttf-wqy-microhei
+gnome-icon-theme sogoupinyin git net-tools shutter kazam 
 ```
 
 ## 更新操作系统到最新
@@ -224,7 +223,7 @@ chmod +x ~/bin/navicat
 
 ## 配置WPS
 
-前面已经安装了，如果想安装最新版本或者 wps 不能启动，请看 [github](https://github.com/BroQiang/Software_WPS)
+详细步骤见 [github](https://github.com/BroQiang/Software_WPS)
 
 ## 禁用IPv6
 
