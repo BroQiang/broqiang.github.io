@@ -273,4 +273,39 @@ sudo chmod +x /usr/local/bin/composer
 
 ```shell
 composer config -g repo.packagist composer https://packagist.phpcomposer.com
-````
+```
+
+## 安装屏幕画笔
+
+这个看个人需求吧，因为经常会有做演示的需求，个人还是非常有需求的。
+
+```shell
+sudo apt-get install gromit-mpx
+```
+
+使用非常简单，可以通过菜单找到，直接点击就可以运行，为了方便也可以放在 dock 中，或者直接快捷键 `Alt+F2` 输入 `gromit-mpx`，这个时候就将软件启动了，可以见右上角。
+
+#### 快捷键
+
+- F9 ---- 开始画图，再次点击就停止画图
+
+- Shift+F9 清空绘图，这个如果不手动清空，画的图案会一直在屏幕上显示
+
+- Ctrl+F9 隐藏桌面绘图，但是不清空，可以再次点击显示
+
+- 画图时默认是红色的线，按住Shift 是蓝线，安装 Ctrl 是黄线
+
+## 画图工具
+
+推荐使用 dia，可以直接普通图案、UML图、流程图等。
+
+#### 安装
+
+```shell
+sudo apt install dia
+```
+
+#### 解决不能输入中文
+
+默认是不能输入中文的，只能用一个折中的办法，在启动的时候执行 `dia --classic` ，不过这样导航栏就拆离出来了，暂时没有更好的解决方案，并且好几年了都没有人解决……
+
