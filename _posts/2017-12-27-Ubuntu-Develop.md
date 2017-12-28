@@ -126,6 +126,9 @@ git config --global user.name "Bro Qiang"
 # 保存密码
 git config --global credential.helper store
 
+# 设置使用 vim 作为默认文本编辑器，nano 实在是用不习惯……
+git config --global core.editor vim
+
 # 配置 git 别名
 echo -e "\nalias gs='git status'\nalias gaa='git add .'\nalias ga='git add '\nalias gp='git push'\nalias gc='git commit -m '\nalias gl='git log'\nalias grao='git remote add origin '\nalias gpo='git push origin '" >> ~/.bash_aliases
 ```
