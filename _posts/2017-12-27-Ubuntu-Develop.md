@@ -49,18 +49,12 @@ sudo apt autoremove libreoffice-* ibus -y
 包括：主题、图标、vim、numix-icon-theme等
 
 ```shell
-# 添加 Ubuntu Kylin 源，配置了这个源之后可以安装更多的软件，如：搜狗拼音
-echo -e "deb http://archive.ubuntukylin.com:10006/ubuntukylin trusty main" | \
-sudo tee /etc/apt/sources.list.d/ubuntu-kylin
-# 添加公钥，如果失败了可以多尝试几次，因为公钥服务器的网络不稳定
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys D259B7555E1D3C58
-
 # 更新源
-sudo apt Update
+sudo apt update
 
 # 安装软件
 sudo apt install -y gnome-tweak-tool arc-theme numix-icon-theme vim \
-gnome-icon-theme sogoupinyin git net-tools shutter kazam 
+gnome-icon-theme git net-tools shutter kazam gnome-shell-extensions
 ```
 
 ## 更新操作系统到最新
@@ -108,8 +102,12 @@ sudo dpkg -l | grep kernel | grep 4.13.0-16.19 | awk '{print $2}' | xargs sudo a
 
 前面已经安装了，如果没装用下面命令安装即可，不过需要注意，要配置 ubuntukylin 源。
 
+可以先从[官网下载](https://pinyin.sogou.com/linux/) deb 包
+
 ```shell
-sudo apt install sogoupinyin
+# 下载搜狗拼音
+sudo dpkg -i sogoupinyin_2.2.0.0102_amd64.deb
+sudo apt install -f
 ```
 打开`设置`界面->`区域和语言`->`Manage Installed Languages`
 
@@ -311,3 +309,13 @@ sudo apt install dia
 
 默认是不能输入中文的，只能用一个折中的办法，在启动的时候执行 `dia --classic` ，不过这样导航栏就拆离出来了，暂时没有更好的解决方案，并且好几年了都没有人解决……
 
+
+## 更新记录
+
+#### 2018-01-04
+
+- 修改文档中的错误
+
+- 去除 kylin 源
+
+- 更改 sogou 拼音从官方安装
