@@ -32,17 +32,17 @@ sudo tar xzvf php-7.2.0.tar.gz -C /usr/local/src/
 
 # Ubuntu 16.10 执行下面命令
 sudo apt install -y libxml2-dev libssl-dev libcurl4-gnutls-dev libjpeg-dev libpng-dev \
-    libfreetype6-dev libmcrypt-dev libreadline-dev re2c
+    libfreetype6-dev libmcrypt-dev libreadline-dev re2c libbz2-dev
 
 
 
 # CentOS 7 执行下面 命令
-sudo yum -y install libxml2 libxml2-devel libcurl libcurl-devel libwebp \
+sudo yum -y install libxml2 libxml2-devel libcurl libcurl-devel libwebp bzip2-devel \
         libwebp-devel openssl-devel libjpeg* libpng libpng-devel readline-devel \
         openldap-devel openldap libmcrypt libmcrypt-devel freetype-devel re2c
 
 # Fedora 26
-sudo dnf -y install libxml2 libxml2-devel libcurl libcurl-devel libwebp \
+sudo dnf -y install libxml2 libxml2-devel libcurl libcurl-devel libwebp bzip2-devel \
         libwebp-devel openssl-devel libjpeg* libpng libpng-devel readline-devel \
         openldap-devel openldap libmcrypt libmcrypt-devel freetype-devel re2c
 
@@ -68,7 +68,7 @@ cd /usr/local/src/php-7.2.0/
 sudo ./configure --prefix=/usr/local/php --with-config-file-path=/usr/local/php/etc \
 --with-mysqli=/usr/local/mysql/bin/mysql_config --with-pdo-mysql=/usr/local/mysql \
 --with-mysql-sock=/tmp/mysql.sock --enable-sockets --enable-zip --enable-fpm \
---with-fpm-user=www --with-fpm-group=www  --with-zlib --enable-pcntl \
+--with-fpm-user=www --with-fpm-group=www  --with-zlib --enable-pcntl --with-bz2\
 --with-jpeg-dir --with-freetype-dir --with-gd --with-curl --with-openssl --with-mhash \
 --with-xmlrpc --enable-ftp --enable-bcmath --enable-shmop --enable-sysvsem --enable-soap \
 --enable-inline-optimization --enable-mbregex --enable-mbstring --with-readline
@@ -189,6 +189,10 @@ php -S localhost:8888
 
 
 ## 更新记录
+
+#### 2018-01-10
+
+添加 bzip2 支持（之前竟然给忘了加了……代码报错才发现）
 
 #### 2017-12-27
 
