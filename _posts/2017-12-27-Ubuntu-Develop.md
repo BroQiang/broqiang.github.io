@@ -65,7 +65,7 @@ sudo apt upgrade -y
 reboot
 ```
 
-重启后登录桌面的时候选择 `Ubuntu on xorg` 启动，不要选择默认，因为现在很多软件不支持 `Wayland`
+重启后登录桌面的时候如果是虚拟机选择 `Ubuntu on xorg` 启动，不要选择默认，因为现在很多软件不支持 `Wayland`，如果是物理机可以尝试一下，如果显卡可以直接 xorg 也可以切换，如果不行就只能 使用 Wayland 了。
 
 更新系统后，会出现两个内核，可以通过下面方式删除旧的内核
 ```shell
@@ -74,6 +74,14 @@ sudo dpkg -l | grep kernel
 # 用眼睛找到版本老的版本，然后将包名复制删除即可
 sudo dpkg -l | grep kernel | grep 4.13.0-16.19 | awk '{print $2}' | xargs sudo apt autoremove -y
 ```
+
+## 安装显卡驱动
+
+如果是虚拟机这部可以跳过了
+
+这里只记录了 MShybrid 显卡的安装方式，并且实测的只有雷神 st pro，未来如果还会用到其他型号笔记本会将安装方法记录。
+
+详细方法见：[ Ubuntu 17.10 安装 MShybrid 显卡](http://broqiang.com/2018/01/13/Ubuntu17.10ForLeiShen/)
 
 ## 配置主题
 
@@ -200,6 +208,8 @@ chmod +x ~/bin/navicat
 
 ## 配置截图工具
 
+#### shutter
+
 在 Ubuntu 下没有什么太好用的截图工具，尝试了几个之后，确定为 `shutter`，这个工具很强大，说它不好用是因为它太重了，有点不够灵巧，功能有点太多了。
 
 使用方法，可以直接通过 `shutter`命令来截图，并可以通过系统设置，给截图命令配置快捷键，方便快速使用截图。
@@ -209,6 +219,13 @@ chmod +x ~/bin/navicat
 - `shutter -f` 全屏截图
 
 - `shutter -m` 截取菜单（一般工具没法截取右键菜单，这个很强大）
+
+#### flameshot
+
+如果使用的不是 xorg， 而是 Wayland，这个是个不错的选择，详细的步骤在：
+
+[Ubuntu 17.10 截图工具](http://broqiang.com/2018/01/16/ScreenshotsForUbuntu/)
+
 
 ## 配置录屏工具
 
