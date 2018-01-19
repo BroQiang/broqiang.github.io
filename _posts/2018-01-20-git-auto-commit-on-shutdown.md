@@ -16,3 +16,28 @@ author: 'Bro Qiang'
 
 ## 自动提交git的脚本
 
+```shell
+#!/bin/bash
+#
+
+root_dir="/home/bro/Repository/gitee /home/bro/Repository/Github"
+commit_date=$(date +%Y-%m-%d_%H-%M-%S)
+
+# 自动提交函数
+for dir in ${root_dir}
+do  
+    for git_dir in $(ls ${dir})
+    do  
+        if [[ $UID -eq 0 ]]; then
+            /bin/su - bro -c "cd ${dir}/${git_dir};/usr/bin/git add ."
+            /bin/su - bro -c "cd ${dir}/${git_dir};/usr/bin/git commit -m 'shell auto commit on '${commit_date}"
+            /bin/su - bro -c "cd ${dir}/${git_dir};/usr/bin/git push"
+        else
+            cd ${dir}/${git_dir}
+            /usr/bin/git add .
+            /usr/bin/git commit -m "auto commit on${commit_date}"
+            /usr/bin/git push
+        fi
+    done
+done
+```
