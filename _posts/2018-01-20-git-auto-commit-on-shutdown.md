@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'Linux 关机时自动提交 git'
-date: '2017-10-25'
+date: '2017-01-20'
 header-img: "img/post-bg-unix.jpg"
 tags:
      - PHP
