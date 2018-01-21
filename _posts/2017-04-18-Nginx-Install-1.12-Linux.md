@@ -141,7 +141,6 @@ events {
 }
 
 include conf.d/http.main;
-}
 
 ```
 
