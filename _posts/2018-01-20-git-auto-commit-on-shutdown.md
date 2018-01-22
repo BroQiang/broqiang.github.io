@@ -104,7 +104,9 @@ WantedBy=multi-user.target graphical.target
 
 ```
 
-将 Service 启用
+将 Service 开机自动启用
+
+> 此步骤不要忘记，否则不能随着系统开机和关闭自动提交
 
 ```shell
 sudo systemctl enable git-auto-commit
@@ -116,3 +118,8 @@ sudo systemctl enable git-auto-commit
 reboot
 ```
 
+## 更新记录
+
+#### 2018-01-22
+
+添加开机自动 pull 代码
