@@ -25,11 +25,21 @@ author: 'Bro Qiang'
 ```shell
 #!/bin/bash
 #
+# 自动提交 git 脚本
+# 2018-01-22 By BroQiang
+#
+# Update：
+#   - 添加自动 pull ，配合 systemd 实现开机自动 pull 代码
 
 root_dir="/home/bro/Repository/gitee /home/bro/Repository/Github"
 commit_date=$(date +%Y-%m-%d_%H-%M-%S)
 # 使用 git 仓库的普通用户
 myuser="bro"
+
+action=${1:-'stop'}
+
+echo $action
+exit
 
 # 自动提交函数
 for dir in ${root_dir}
@@ -39,14 +49,28 @@ do
         if [[ $UID -eq 0 ]]; then
             # 这里写的不优雅，原本想封装到函数中，但是不知道 su - bro -c 怎么调用函数……
             # 如果有人知道，可以告诉我 broqiang@qq.com，万分感谢了
-            /bin/su - ${myuser} -c "cd ${dir}/${git_dir};/usr/bin/git add ."
-            /bin/su - ${myuser} -c "cd ${dir}/${git_dir};/usr/bin/git commit -m 'shell auto commit on '${commit_date}"
-            /bin/su - ${myuser} -c "cd ${dir}/${git_dir};/usr/bin/git push"
+            if [[ "$action" == "start" ]]; then
+                /bin/su - ${myuser} -c "cd ${dir}/${git_dir};/usr/bin/git pull"
+            fi
+
+            if [[ "$action" == "stop" ]]; then
+                /bin/su - ${myuser} -c "cd ${dir}/${git_dir};/usr/bin/git add ."
+                /bin/su - ${myuser} -c "cd ${dir}/${git_dir};/usr/bin/git commit -m 'shell auto commit on '${commit_date}"
+                /bin/su - ${myuser} -c "cd ${dir}/${git_dir};/usr/bin/git push"
+            fi
         else
             cd ${dir}/${git_dir}
-            /usr/bin/git add .
-            /usr/bin/git commit -m "auto commit on${commit_date}"
-            /usr/bin/git push
+    
+
+            if [[ "$action" == "start" ]]; then
+                /usr/bin/git pull
+            fi
+
+            if [[ "$action" == "stop" ]]; then
+                /usr/bin/git add .
+                /usr/bin/git commit -m "auto commit on${commit_date}"
+                /usr/bin/git push
+            fi
         fi
     done
 done
@@ -68,13 +92,16 @@ sudo vim /lib/systemd/system/git-auto-commit.service
 [Unit]
 Description=Auto commit code on reboot and shutdown
 Requires=network.target
- 
+
 [Service]
 Type=simple
-ExecStart=/bin/true
+
+ExecStart=/home/bro/bin/git_auto_commit start
+
 RemainAfterExit=true
-ExecStop=/home/bro/bin/git_auto_commit
-  
+
+ExecStop=/home/bro/bin/git_auto_commit stop
+
 [Install]
 WantedBy=multi-user.target graphical.target
 ```
