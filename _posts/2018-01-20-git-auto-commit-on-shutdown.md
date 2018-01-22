@@ -38,9 +38,6 @@ myuser="bro"
 
 action=${1:-'stop'}
 
-echo $action
-exit
-
 # 自动提交函数
 for dir in ${root_dir}
 do  
