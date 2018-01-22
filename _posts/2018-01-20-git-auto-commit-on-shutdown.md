@@ -89,6 +89,7 @@ sudo vim /lib/systemd/system/git-auto-commit.service
 [Unit]
 Description=Auto commit code on reboot and shutdown
 Requires=network.target
+After=network.target remote-fs.target nss-lookup.target
 
 [Service]
 Type=forking
