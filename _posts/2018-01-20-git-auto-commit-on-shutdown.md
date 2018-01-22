@@ -91,16 +91,17 @@ Description=Auto commit code on reboot and shutdown
 Requires=network.target
 
 [Service]
-Type=simple
-
+Type=forking
+#Type=simple
 ExecStart=/home/bro/bin/git_auto_commit start
 
-RemainAfterExit=true
+RemainAfterExit=true 
 
 ExecStop=/home/bro/bin/git_auto_commit stop
 
 [Install]
 WantedBy=multi-user.target graphical.target
+
 ```
 
 将 Service 启用
