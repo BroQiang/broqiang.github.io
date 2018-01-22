@@ -89,7 +89,7 @@ sudo vim /lib/systemd/system/git-auto-commit.service
 [Unit]
 Description=Auto commit code on reboot and shutdown
 Requires=network.target
-After=network.target remote-fs.target nss-lookup.target
+After=network.target remote-fs.target nss-lookup.target graphical.target
 
 [Service]
 Type=forking
@@ -101,7 +101,7 @@ RemainAfterExit=true
 ExecStop=/home/bro/bin/git_auto_commit stop
 
 [Install]
-WantedBy=multi-user.target graphical.target
+WantedBy=graphical.target
 
 ```
 
@@ -123,4 +123,6 @@ reboot
 
 #### 2018-01-22
 
-添加开机自动 pull 代码
+- 添加开机自动 pull 代码
+
+- 修改启动脚本，使脚本只在图形界面执行，并且在 graphical.target 之后执行
