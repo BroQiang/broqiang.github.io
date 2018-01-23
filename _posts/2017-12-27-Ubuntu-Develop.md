@@ -136,7 +136,7 @@ git config --global credential.helper store
 git config --global core.editor vim
 
 # 配置 git 别名
-echo -e "\nalias gs='git status'\nalias gaa='git add .'\nalias ga='git add '\nalias gp='git push'\nalias gc='git commit -m '\nalias gl='git log'\nalias grao='git remote add origin '\nalias gpo='git push origin '" >> ~/.bash_aliases
+echo -e "\nalias gs='git status'\nalias gaa='git add .'\nalias ga='git add '\nalias gp='git push'\nalias gc='git commit -m '\nalias gl='git log'\nalias grao='git remote add origin '\nalias gpo='git push origin '\nalias gb='git branch'" >> ~/.bash_aliases
 ```
 
 ## 配置vim
@@ -291,6 +291,50 @@ sudo chmod +x /usr/local/bin/composer
 ```shell
 composer config -g repo.packagist composer https://packagist.phpcomposer.com
 ```
+
+## 安装 node 环境
+
+#### 安装 node 和 npm
+
+```shell
+sudo apt install nodejs npm
+```
+
+#### 安装 yarn
+
+因为 npm 的效率等问题，不是非常好用，所以一般都将 npm install 的工作用 yarn 来替换
+
+```shell
+# 如果没有安装 curl 就先安装，如果已经安装可以忽略
+sudo apt install -y curl
+
+# 导入仓库的秘钥
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+# 配置 yarn 的仓库，一定注意，要导入仓库在安装，Ubuntu 默认带的 yarn 是个莫名其妙的东西，反正不是这个 yarn 就对了
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+
+# 更新软件源，这个也是必须要做的，否则安装的时候还是系统自带的 yarn
+sudo apt-get update
+
+# 安装
+sudo apt-get install yarn
+```
+
+#### 配置国内源
+
+这里采用的都是淘宝的镜像，其他的没有尝试过
+
+```shell
+# npm 直接将下面内容写去 到 ~/.bash_alias 中即可
+alias cnpm="npm --registry=https://registry.npm.taobao.org \
+--cache=$HOME/.npm/.cache/cnpm \
+--disturl=https://npm.taobao.org/dist \
+--userconfig=$HOME/.cnpmrc"
+
+# yarn 国内镜像
+yarn config set registry https://registry.npm.taobao.org
+```
+
 
 ## 安装屏幕画笔
 
