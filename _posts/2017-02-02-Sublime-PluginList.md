@@ -76,4 +76,8 @@ author: 'Bro Qiang'
 
 - Blade Snippets - Laravel Blade Snippets
 
+- SyncedSideBar - 自动在左边文件夹树中定位当前文件 `2018-02-01 新加`
+
+- EditorConfig -  `.editorconfig` 编码格式化支持 `2018-02-01 新加`
+
 
