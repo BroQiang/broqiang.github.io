@@ -8,25 +8,23 @@ tags:
 author: 'Bro Qiang'
 ---
 
-
-## VMware Workstation 虚拟机安装
-
 ## 虚拟机软件介绍
 
-- [ VMWare Workstation](http://www.vmware.com/cn/products/workstation/workstation-evaluation.html) 
-    个人认为最强大的，不过要收费，可以试用，支持Windows和Linux
-
-    License: `5A02H-AU243-TZJ49-GTC7K-3C61N` ,此 Key 源自 [Baidu](https://zhidao.baidu.com/question/1240914582586009779.html), 测试后请及时删除
-
-    此处就是以此软件进行讲解
-
-- [Oracle VM VirtualBox](https://www.virtualbox.org/) 
-    开源产品，支持Windows/Linux/Mac OS X
-
-- 还有一些，比如KVM/Hyper-V等，其他产品没有使用过，在此就不提了
-
+#### [ VMWare Workstation](http://www.vmware.com/cn/products/workstation/workstation-evaluation.html)
 
 [VMware 官网](http://www.vmware.com/cn.html)
+
+个人认为最强大的，不过要收费，可以试用，支持Windows和Linux。
+
+License: `5A02H-AU243-TZJ49-GTC7K-3C61N` ,此 Key 源自 [Baidu](https://zhidao.baidu.com/question/1240914582586009779.html), 测试后请及时删除
+
+此处就是以此软件进行讲解
+
+#### [Oracle VM VirtualBox](https://www.virtualbox.org/) 
+
+开源产品，支持Windows/Linux/Mac OS X
+
+#### 还有一些，比如KVM/Hyper-V等，其他产品没有使用过，在此就不提了
 
 ## 获取软件
 
@@ -34,23 +32,27 @@ author: 'Bro Qiang'
 
 - [VMware Workstation 12 Pro for Linux（64 位）](https://download3.vmware.com/software/wkst/file/VMware-Workstation-Full-12.5.5-5234757.x86_64.bundle)
 
-    如果地址失效，直接去 [官网](http://www.vmware.com/cn.html) 手动找到链接下载即可
+如果地址失效，直接去 [官网](http://www.vmware.com/cn.html) 手动找到链接下载即可
 
 ## 软件安装
 
-- Window 双击刚刚下载的`VMware-workstation-full-12.5.5-5234757.exe` 文件，一直下一步，直到完成
+#### Window 安装
 
-- Linux 先给下载下来的文件添加执行权限，然后再执行安装文件
+双击刚刚下载的`VMware-workstation-full-12.5.5-5234757.exe` 文件，一直下一步，直到完成
 
-    打开一个终端`Ctrl+Shift+t`,找到下载文件目录，如果没选择的话默认会下载到`Downloads`目录
+#### Linux 安装
 
-    ```shell
-    $ cd ~/Downloads
-    $ chmod +x VMware-Workstation-Full-12.5.5-5234757.x86_64.bundle
-    $ sudo ./VMware-Workstation-Full-12.5.5-5234757.x86_64.bundle
-    ```
+先给下载下来的文件添加执行权限，然后再执行安装文件
 
-    然后基本也是一路下一步，直到完成
+打开一个终端`Ctrl+Shift+t`,找到下载文件目录，如果没选择的话默认会下载到`Downloads`目录
+
+```bash
+cd ~/Downloads
+chmod +x VMware-Workstation-Full-12.5.5-5234757.x86_64.bundle
+sudo ./VMware-Workstation-Full-12.5.5-5234757.x86_64.bundle
+```
+
+然后基本也是一路下一步，直到完成
 
 ## 配置虚拟机
 
@@ -118,4 +120,3 @@ author: 'Bro Qiang'
 - 选择右侧的使用ISO镜像
 
 - 选择镜像即可（镜像的获取在下一节介绍）
- 
