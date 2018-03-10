@@ -74,16 +74,17 @@ Sublime for Linux 输入中文的解决方案, 详细的配置见
 
 左侧菜单增强工具，功能很强大，不过个人不喜欢，一下多了很多,感觉有点乱，所以就没有安装
 
+#### `SyncedSideBar`
+
+自动在左边文件夹树中定位当前文件
+
+#### `EditorConfig`
+
+`.editorconfig` 编码格式化支持
+
 #### `ColorPicker`
 
-<<<<<<< HEAD
 直接在sublime里调用调色板的工具，也算是比较实用的一个工具，快键键 `Ctrl+Shift+C`
-=======
-- SyncedSideBar - 自动在左边文件夹树中定位当前文件 `2018-02-01 新加`
-
-- EditorConfig -  `.editorconfig` 编码格式化支持 `2018-02-01 新加`
-
->>>>>>> db8bfc63463afb495c8e5fa2731a1c219297f23e
 
 #### `AutoFileName`
 
