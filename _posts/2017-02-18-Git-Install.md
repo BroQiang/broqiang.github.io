@@ -8,69 +8,121 @@ tags:
 author: 'Bro Qiang'
 ---
 
-### 获取最新安装包
+## 获取最新安装包
 
-git是工具，个人觉得不必过分追求稳定，推荐用最新版本，可以获得最好的体验
+- [官方下载列表](https://www.kernel.org/pub/software/scm/git/)
 
-[官方下载](https://www.kernel.org/pub/software/scm/git/)
+- [当前最新版本 2.16.2](https://www.kernel.org/pub/software/scm/git/git-2.16.2.tar.gz)
 
-如果下载速度慢的话可以到[我的git仓库 ](https://git.oschina.net/BroQiang/software.git) 下载，不一定是最新的，一般是我正在使用的版本
+- [Github 仓库](https://github.com/git/git)
 
-没有选择具体版本，找到最新版本下载即可，下面示例以当前最新版本进行说明
+- [官方中文文档](https://git-scm.com/book/zh/v2)
 
-### Ubuntu安装
+## Ubuntu 安装
 
-Ubuntu比较简单，直接一条命令安装即可
+Ubuntu 软件仓库自带的版本是比较新的，可以直接在线安装。
 
-```shell
-$ sudo apt install git -y
+```bash
+sudo apt install git -y
 ```
 
-### 源码编译安装
+## Fedora 安装
 
-如果想安装官方最新版本，可以用源码编译安装
+Fedora 软件仓库的版本也是很新的，比 Ubuntu 还要新一些。
+
+```bash
+sudo dnf install git
+```
+
+## CentOS 安装
+
+CentOS 也可以通过 yum 安装，不过 yum 安装的版本有些低，`不推荐`使用此方法，和最新版本差的有些多，会有一些不兼容。
+
+```bash
+sudo yum install git
+```
+
+## 源码编译安装
+
+如果在线安装的版本过低或者想用最新版本，可以直接编译 git 源码安装，`推荐 CentOS 使用这种方式` 。
 
 下面的方法支持CentOS和Ubuntu，区别只是依赖关系的安装方式不同，其他全部相同
 
-```shell
-# CentOS 安装依赖关系 
-$ sudo yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel  perl-ExtUtils-MakeMaker
+#### 安装依赖关系
 
-# Ubuntu 安装依赖关系
-# sudo apt-get install libcurl4-gnutls-dev libexpat1-dev gettext libz-dev libssl-dev
+```bash
+# CentOS
+sudo yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel  perl-ExtUtils-MakeMaker
 
+# Fedora
+sudo dnf install curl-devel expat-devel gettext-devel openssl-devel zlib-devel  perl-ExtUtils-MakeMaker
+
+# Ubuntu
+sudo apt install libcurl4-gnutls-dev libexpat1-dev gettext libz-dev libssl-dev
+```
+
+#### 安装编译 doc 和 info 的依赖关系
+
+这个是用来编译的时候将 man 和 info 手册的内容编译出来，个人不建议编译，因为下面几个依赖安装的包比较多，一般 git 的 man 也用不到，所以个人推荐 `不安装` 下面依赖，后面编译的时候也`不去编译` doc 和 info
+
+```bash
+# CentOS
+sudo yum install asciidoc xmlto docbook2X
+# CentOS 有个 bug，docbook2X 安装完成后的包名叫 db2x_docbook2texi ，所以需要创建一个 软链接
+sudo ln -s /usr/bin/db2x_docbook2texi /usr/bin/docbook2x-texi
+
+# Fedota
+sudo dnf install asciidoc xmlto docbook2X
+
+# Ubuntu
+sudo apt install asciidoc docbook2x
+```
+
+
+#### 下载并解压
+
+```bash
 # 下载解压
-$ wget https://www.kernel.org/pub/software/scm/git/git-2.9.4.tar.gz
+$ wget https://www.kernel.org/pub/software/scm/git/git-2.16.2.tar.gz
 
 $ sudo tar xzvf git-2.9.4.tar.gz -C /usr/local/src/
 $ cd /usr/local/src/git-2.9.4
+```
 
-# 配置及安装
-$ sudo ./configure --prefix=/usr/local/git
-$ sudo make
-$ sudo make install
+#### 配置并编译
+
+```bash
+# 如果是 github 上下载的版本，需要执行下面命令，官方下载的可以忽略
+sudo make configure
+
+# 配置
+sudo ./configure --prefix=/usr/local/git
+
+# 编译，一般情况下直接执行 sudo make all 就可以了
+# 如果需要编译 man 和 info 帮助手册，执行 make all doc info
+sudo make all
+
+# 安装，一般直接安装就可以了
+# 如果前面 make 的时候编译了 doc 和 info
+# 也可以执行 sudo make install install-doc install-html install-info 安装man 和 info 的手册
+sudo make install
 ```
 
 
 ## 配置环境变量
 
-```shell
-$ sudo vim /etc/profile.d/git.sh
-# 写入
+```bash
+sudo vim /etc/profile.d/git.sh
+# 写入下面两行到 git.sh
 export GIT_HOME=/usr/local/git
 export PATH=$GIT_HOME/bin:$PATH
 
 # 生效下
-$ source /etc/profile.d/git.sh
+source /etc/profile.d/git.sh
+
+# 测试下
+git --version
 ```
-
-## 安装完成后测试
-
-```shell
-$ git --version
-```
-
-全部打印出版本信息，安装完成
 
 ## 配置账号
 
@@ -78,7 +130,7 @@ $ git --version
 
 全局配置
 
-```shell
+```bash
 # 邮箱改成实际的
 $ git config --global user.email "broqiang@qq.com"
 
@@ -91,7 +143,7 @@ $ git config --global user.name "Bro Qiang"
 
 比如提交 github ，如果不记住，每次都要输一次，个人电脑，还是记住比较方便
 
-```shell
+```bash
 # 长期保存, 一般要是个人开发电脑，配置这个就行
 $ git config --global credential.helper store
 
@@ -101,11 +153,3 @@ $ git config --global credential.helper cache
 # 指定临时保存时间
 $ git config credential.helper 'cache --timeout=3600'
 ```
-
-
-
-## 更新日志
-
-- 2017-06-11 更正书写错误
-
-- 2017-05-25 更新到当前最新版本 `2.9.4`
