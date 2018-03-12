@@ -9,8 +9,6 @@ tags:
 author: 'Bro Qiang'
 ---
 
-# Memcache 教程
-
 ## 为什么要学习 Memcahe
 
 首先我们要知道 Memcache 是做什么的，为什么需要学习 Memcache
@@ -71,21 +69,21 @@ Memcached 对CPU的使用很轻，它是多线程工作的，默认为4个工作
 
 #### 源码编译安装
 
-```shell
+```bash
 # 下载安装包
-$ wget https://memcached.org/files/memcached-1.4.37.tar.gz
+wget https://memcached.org/files/memcached-1.4.37.tar.gz
 
 # 安装依赖关系
-$ sudo apt install libevent-dev
+sudo apt install libevent-dev
 
 # 解压缩，并进入到目录
-$ sudo tar xzvf memcached-1.4.37.tar.gz -C /usr/local/src/
-$ cd /usr/local/src/memcached-1.4.37
+sudo tar xzvf memcached-1.4.37.tar.gz -C /usr/local/src/
+cd /usr/local/src/memcached-1.4.37
 
 # 编译安装
-$ sudo ./configure --prefix=/usr/local/memcached
-$ sudo make
-$ sudo make install
+sudo ./configure --prefix=/usr/local/memcached
+sudo make
+sudo make install
 
 ```
 
@@ -93,17 +91,17 @@ $ sudo make install
 
 在 /etc/profile.d/下新建 `memcached.sh` 文件，用来专门保存Memcached的配置，写入下面内容
 
-```shell
+```bash
 export MEMCACHED_HOME=/usr/local/memcached
 export PATH=$PATH:$MEMCACHED_HOME/bin
 ```
 
 执行 source 或 . 使配置生效
 
-```shell
-$ source /etc/profile.d/memcached.sh
+```bash
+source /etc/profile.d/memcached.sh
 # 或
-$ . /etc/profile.d/memcached.sh
+. /etc/profile.d/memcached.sh
 ```
 
 
@@ -114,11 +112,11 @@ $ . /etc/profile.d/memcached.sh
 需要注意几个参数，这里只列出主要的常用的参数，额外的可以通过 memcached -h 去查询
 
 - `-m` Memcached 进程使用多少内存，单位是 M
-- 
+
 - `-d` Memcached 以守护进程的方式执行，如果是通过初始化脚本启动的，可以不用考虑这个参数
-- 
+
 - `-p` 监听TCP端口，默认是11211，如果需要启动多个实例，就将下一个服务的端口设置成11211以外的其他端口，如11212
-- 
+
 - `-l` 指定监听的IP，默认是 0.0.0.0
 
     如果你的防火墙没有限制的情况下，Memcached 将对外暴露
@@ -130,11 +128,11 @@ $ . /etc/profile.d/memcached.sh
 - `-U` UDP 端口，默认是开启，端口是 udp 11211，不过建议将其禁用，将端口设置为 0 ，就可以关闭
 
 
-```shell
+```bash
 # 下面的配置就是Memcached 最大内存1024M，端口11211，监听地址是127.0.0.1 后台执行
-$ memcached -m 1024 -p 11211 -l 127.0.0.1 -d
+memcached -m 1024 -p 11211 -l 127.0.0.1 -d
 # 后台执行后要想停用，可以killall memcached ，将所有的Memcached实例全都杀死
-$ killall memcached
+killall memcached
 # 或者 kill 指定 pid
 ```
 
@@ -149,7 +147,7 @@ $ killall memcached
     当线程数超过80的时候，将使得Memcached运行会非常的慢
 
 - 连接限制
-    
+
     默认的，Memcached 最大连接数会被设置成1024个，如果超出这个数量的客户端连接，将会挂起，等待其他连接释放后才会连接
 
     因此配置完成后要根据实际情况去配置这个值，一般情况下这个配置足够了，当然高并发的时候就要适当的调整了
@@ -158,16 +156,16 @@ $ killall memcached
 
 #### 查看正在运行的配置
 
-```shell
-$ echo "stats settings" | nc 127.0.0.1 11211
+```bash
+echo "stats settings" | nc 127.0.0.1 11211
 ```
 
 #### 启动脚本
 
 我们将源码包中的 script 目录中的 启动脚本复制到 系统的启动脚本中
 
-```shell
-$ sudo cp /usr/local/src/memcached-1.4.37/scripts/memcached.service /lib/systemd/system/
+```bash
+sudo cp /usr/local/src/memcached-1.4.37/scripts/memcached.service /lib/systemd/system/
 # 我们要根据实际的软件安装情况修改几个配置
 # 1. 修改下默认的配置文件的位置，将下面的配置修改
 EnvironmentFile=/etc/sysconfig/memcached
@@ -183,7 +181,7 @@ ExecStart=/usr/local/memcached/bin/memcached -p ${PORT} -u ${USER} -m ${CACHESIZ
 
 然后我们在 我们刚刚修改的配置文件 /usr/local/memcached/etc/memcached.conf 中写入下面配置，来定义配置文件
 
-```shell
+```bash
 PORT=11211
 
 USER=root
@@ -203,9 +201,9 @@ telnet 的连接，并测试
 
 #### 系统命令
 
-```shell
+```bash
 # 连接
-$ telnet 127.0.0.1 11211
+telnet 127.0.0.1 11211
 # 查看版本
 version
 # 查看状态，后面可以跟 settings/items/sizes/slabs 这些参数，可以展示出不同的结果
@@ -217,9 +215,9 @@ flush_all
 
 #### 存储命令
 
-格式： 
+**格式：**
 
-```shell
+```bash
 # 命令及参数
 <command> <key> <flags> <exptime> <bytes> [<version>]
 # 数据
@@ -228,14 +226,14 @@ flush_all
 <status>
 ```
 
-参数说明：
+**参数说明：**
 
 - `command` 可以使用的命令，包括 `set/add/replace/append/prepend/cas`
 
     * add 只有数据不存在时进行添加，如果存在就会提示NOT_STORED
-    
+
     * set 不管是否存在都会添加，并且会将之前的值覆盖
-    
+
     * replace 只会替换已经存在的key
 
     * append 在原本的key对应的值后面追加字符，并不会破坏原本的超时时间
@@ -271,7 +269,7 @@ flush_all
 
 我们先不考虑flag，等到PHP部分再详细说明用途，暂时就随便用一个整数去设置，比如16
 
-```shell
+```bash
 # 设置 name 为5个字符，过期时间不限制
 set name 16 0 5
 # 写入名字 zhang
@@ -291,21 +289,21 @@ replace id 16 0 10
 
 #### 读取命令
 
-格式：
+**格式：**
 
-```shell
+```bash
 get/gets key1 key2 ...keyn
 ```
 
-说明：
+**说明：**
 
 - `get` 根据 key 获取到对应的值
 
 - `gets` 和get相同，比get会多flag、bytes和[version] 信息
 
-实例：
+**实例：**
 
-```shell
+```bash
 # 获取name和id的值
 get name id
 # 获取name和id的值，并有详细信息
@@ -318,7 +316,7 @@ cas name 16 0 5 13
 
 格式：
 
-```shell
+```bash
 # 这个很简单的，加上key即可，不能批量删除
 delete key
 ```
@@ -326,18 +324,18 @@ delete key
 
 #### 计数命令
 
-用法：
+**用法：**
 
-```shell
+```bash
 incr key number
 decr key number
 ```
 
 说明： 用来对value为int数字型的key进行加n或者减n操作，直接看实例，如果操作的是字符串将会报错
 
-实例：
+**实例：**
 
-```shell
+```bash
 # 给刚才的id增加，先看下id现在的值，然后再看加完之后的结果，再看减少之后的结果
 get id
 incr id 1
@@ -395,50 +393,36 @@ memcached 会把我们写入的 value 打包成 item，并保存到trunk中，�
 
 实例：
 
-```shell
+```bash
 # 查看默认的大小及数量
-$ memcached -vv
+memcached -vv
 
 # 自定义 -n 和 -f 参数，观察下结果
-$ memcached -n 40 -f 2 -vv
+memcached -n 40 -f 2 -vv
 ```
 
 #### 内存分配申请
 
 向memcached添加一个item时候，memcached首先会根据item的大小，来选择最合适的slabclass。
 
-例如要插入 10字节的一个 item，默认情况下 slab class 1 的 chunk 大小为96字节，因此是可以放到在class1中，
+例如要插入 10字节的一个 item，默认情况下 slab class 1 的 chunk 大小为96字节，因此是可以放到在class1中，96-10 = 86 个字节的空间就会被浪费了(先不考虑key和flag占用的)，memcached 会去检查 slab class 1 大小的 chunk 还有没有空闲的，如果没有，将会申请新的 slab class1 空间并划分为该种类chunk。
 
-96-10 = 86 个字节的空间就会被浪费了(先不考虑key和flag占用的)
-
-memcached 会去检查 slab class 1 大小的 chunk 还有没有空闲的，如果没有，将会申请新的 slab class1 空间并划分为该种类chunk。
-
-例如我们第一次向memcached中放入一个 小于 96 字节的item时，memcached会使用slab class1，并会用去一个chunk，
-
-剩余 10921 个chunk供下次有适合大小item时使用，当我们用完这所有的chunk之后，下次再有一个在96字节以下的item添加进来时，
-
-memcached会再申请空间生成一个class1 slab（这样就存在了2个slab class1）。
+例如我们第一次向memcached中放入一个 小于 96 字节的item时，memcached会使用slab class1，并会用去一个chunk，剩余 10921 个chunk供下次有适合大小item时使用，当我们用完这所有的chunk之后，下次再有一个在96字节以下的item添加进来时，memcached会再申请空间生成一个class1 slab（这样就存在了2个slab class1）。
 
 
 #### 删除策略
 
 memcached是懒检测机制，当存储在内存中的对象过期甚至是 flush_all 时 ，它并不会做检查或删除操作，只有在get时才检查数据对象是否应该删除。
 
-删除数据时，Memcached同样是懒删除机制，只在对应的数据对象上做删除标识并不回收内存，在下次分配时直接覆盖使用。
-
-所以，当memcached过期或者删除的时候，它所占用的内存并不会释放，除非将服务重新启动。
+删除数据时，Memcached同样是懒删除机制，只在对应的数据对象上做删除标识并不回收内存，在下次分配时直接覆盖使用。所以，当memcached过期或者删除的时候，它所占用的内存并不会释放，除非将服务重新启动。
 
 当Memcached 没有空间保存新的数据时会怎么处理？会自动覆盖最后一次使用时间最早的数据，用来保存最新的数据
 
 ## Memcached 集群
 
-由于Memcached服务器与服务器之间没有任何通讯，并且不进行任何数据复制备份，
+由于Memcached服务器与服务器之间没有任何通讯，并且不进行任何数据复制备份，所以当任何服务器节点出现故障时，会出现单点故障，如果需要实现HA，则需要通过另外的方式来解决。
 
-所以当任何服务器节点出现故障时，会出现单点故障，如果需要实现HA，则需要通过另外的方式来解决。
-
-通过Magent缓存代理，防止单点现象，缓存代理也可以做备份，通过客户端连接到缓存代理服务器，缓存代理服务器连接缓存连接服务器，
-
-缓存代理服务器可以连接多台Memcached机器可以将每台Memcached机器进行数据同步。
+通过Magent缓存代理，防止单点现象，缓存代理也可以做备份，通过客户端连接到缓存代理服务器，缓存代理服务器连接缓存连接服务器，缓存代理服务器可以连接多台Memcached机器可以将每台Memcached机器进行数据同步。
 
 如果其中一台缓存服务器down机，系统依然可以继续工作，如果其中一台Memcached机器down掉，数据不会丢失并且可以保证数据的完整性。
 
@@ -453,13 +437,15 @@ memcached是懒检测机制，当存储在内存中的对象过期甚至是 flus
 
 #### PHP 的Memcached 扩展
 
-PHP 有两个关于Memcache的扩展 [Memcache](http://php.net/manual/zh/book.memcache.php) 和 [Memcached](http://php.net/manual/zh/intro.memcached.php)
+PHP 有两个关于Memcache的扩展 [Memcache](http://php.net/manual/zh/book.memcache.php) 和 [Memcached](http://php.net/manual/zh/intro.memcached.php)，他们有什么区别呢?
 
-他们有什么区别呢? 
+- [Memcache](http://php.net/manual/zh/book.memcache.php) 
 
-- [Memcache](http://php.net/manual/zh/book.memcache.php) php memcache独立用php实现，是老客户端，实际应用中已发现有多个问题，而且功能少
+    php memcache独立用php实现，是老客户端，实际应用中已发现有多个问题，而且功能少
 
-- [Memcached](http://php.net/manual/zh/book.memcached.php) 基于原生的libmemcached的扩展，更加完善，建议使用 memcached，后面的讲解也是按照此扩展进行
+- [Memcached](http://php.net/manual/zh/book.memcached.php) 
+
+    基于原生的libmemcached的扩展，更加完善，建议使用 memcached，后面的讲解也是按照此扩展进行
 
 Memcached 的扩展，对应 Memcached 本身来说，就是一个客户端，和我们之前用 telnet 连接操作是相同的，只是此处把 telnet 换成了 PHP
 
@@ -468,49 +454,45 @@ Memcached 的扩展，对应 Memcached 本身来说，就是一个客户端，�
 
 到 [pecl](http://pecl.php.net) 下载 Memcached 扩展包
 
-```shell
-
+```bash
 # 安装 libmemcached 客户端 ，因为 Memcached 扩展需要 libmemcached 客户端支持
-
-$ sudo apt install libmemcached-dev
+sudo apt install libmemcached-dev
 
 # 安装依赖关系，HP 扩展需要 libmemcached 必须启用sasl，默认就是启用 
 # 但是要确保服务器安装了sasl包，configure 之后一定要注意看下，是否有 SASL support: yes 这个信息
-$ sudo apt install libsasl2-dev
+sudo apt install libsasl2-dev
 
 # 下载安装包
-$ wget http://pecl.php.net/get/memcached-3.0.3.tgz
+wget http://pecl.php.net/get/memcached-3.0.3.tgz
 
 # 因为是PHP的扩展，所以解压到 PHP 的源码包的 ext 目录中
-$ tar xzvf memcached-3.0.3.tgz -C /usr/local/src/php-7.1.4/ext/memcached-3.0.3
-$ /usr/local/src/php-7.1.4/ext/memcached-3.0.3
+tar xzvf memcached-3.0.3.tgz -C /usr/local/src/php-7.1.4/ext/memcached-3.0.3
+/usr/local/src/php-7.1.4/ext/memcached-3.0.3
 
 # 通过  phpize 生成 configure 文件，phpize是专门用来准备 PHP 扩展库的编译环境的工具
-$ sudo /usr/local/php/bin/phpize 
+sudo /usr/local/php/bin/phpize 
 
 # 编译安装
-$ sudo ./configure --with-php-config=/usr/local/php/bin/php-config  --with-zlib-dir
-$ sudo make
-$ sudo make install
+sudo ./configure --with-php-config=/usr/local/php/bin/php-config  --with-zlib-dir
+sudo make
+sudo make install
 
 # 可以看到，他将 Memcached 扩展安装到了下面的位置
 /usr/local/php/lib/php/extensions/no-debug-non-zts-20160303/
 
 # 修改 php.ini 加载memcached扩展
-$ sudo vim /usr/local/php/etc/php.ini
+sudo vim /usr/local/php/etc/php.ini
 # 在最下面写入
 extension=memcached.so
 
 # 测试是否生效
-$ php -i | grep memcached
+php -i | grep memcached
 ```
-
 
 #### 代码演示
 
 [官方文档](http://php.net/manual/zh/book.memcached.php)
 
-未完，待续
 
 
 

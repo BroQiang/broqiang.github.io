@@ -8,27 +8,32 @@ tags:
 author: 'Bro Qiang'
 ---
 
-# Linux 编译安装 PHP 7.2.0
+## 开始之前
 
-- 此文档支持 Ubuntu 16.10 / Ubuntu 17.10 / CentOS 7 / Fedora 26 / Fedora 27, 除了依赖关系,其他步骤相同即可
+此文档支持下面版本（经过测试）
 
-- 如参考此文档遇到问题,可以留言
+- Ubuntu 16.10 / Ubuntu 17.10 
+- CentOS 7 
+- Fedora 26 / Fedora 27, 除了依赖关系,其他步骤相同即可
 
-- 编译的时候编译了 Mysql 支持,安装前要保证 Mysql 安装正确, 可以参考此博客中的 Mysql 安装
+
+编译的时候编译了 Mysql 支持,安装前要保证 Mysql 安装正确, 可以参考此博客中的 [Mysql 安装](http://blog.broqiang.com/posts/11)
+
+原本已经更新到了 7.2 ，在使用过程中发现变化有些多，并且和绝大多数应用兼容还有问题，所以又将文档降回到 7.1 。
 
 ## 准备安装包
 
-```shell
+```bash
 # 下载安装包
-wget http://cn2.php.net/distributions/php-7.2.0.tar.gz
+wget http://cn2.php.net/distributions/php-7.1.15.tar.gz
 
 # 解压到src目录
-sudo tar xzvf php-7.2.0.tar.gz -C /usr/local/src/
+sudo tar xzvf php-7.1.15.tar.gz -C /usr/local/src/
 ```
 
 ## 解决依赖关系
 
-```shell
+```bash
 
 # Ubuntu 16.10 执行下面命令
 sudo apt install -y libxml2-dev libssl-dev libcurl4-gnutls-dev libjpeg-dev libpng-dev \
@@ -50,7 +55,7 @@ sudo dnf -y install libxml2 libxml2-devel libcurl libcurl-devel libwebp bzip2-de
 
 ## 创建守护进程用户
 
-```shell
+```bash
 sudo useradd -M -r -s /sbin/nologin www
 ```
 
@@ -58,9 +63,9 @@ sudo useradd -M -r -s /sbin/nologin www
 
 此处只是常用的扩展, 如果需要什么扩展后期再安装也可以
 
-```shell
+```bash
 # 进入到源码存放目录
-cd /usr/local/src/php-7.2.0/
+cd /usr/local/src/php-7.1.15/
 
 # 配置 makefile
 # 需要注意,此处将 mysql 编译进来了,需要保证 Mysql 已经安装配置好
@@ -82,7 +87,7 @@ sudo make install
 
 [详细参数配置参考](http://php.net/manual/zh/install.fpm.configuration.php)
 
-```shell
+```bash
 # 复制默认配置文件
 sudo cp php.ini-production /usr/local/php/etc/php.ini
 sudo cp sapi/fpm/php-fpm.service /lib/systemd/system
@@ -98,13 +103,11 @@ sudo systemctl enable php-fpm
 
 #### 时区配置
 
-> 这个还是很有必要的, 如果 php.ini 中没有配置, 程序也没有初始化, 就会出现莫名其妙的问题了
->
-> 养成习惯,安装完了就给他配置上即可
+> 这个还是很有必要的，如果 php.ini 中没有配置， 程序也没有初始化， 就会出现莫名其妙的问题了，养成习惯，安装完了就给他配置上即可。
 
 根据项目实际去配置, 一般都是中国时区 `Asia/Shanghai`, [可以配置的时区](http://php.net/manual/zh/timezones.php)
 
-```shell
+```bash
 sudo vim /usr/local/php/etc/php.ini
 
 # 将下面的
@@ -120,7 +123,7 @@ date.timezone = PRC
 
 这个参数是可选的，非必须，根据实际情况去配置
 
-```shell
+```bash
 # 修改默认上传文件的大小，这个默认是2M，可以根据实际的项目需求去设置
 upload_max_filesize = 2M
 
@@ -130,7 +133,7 @@ post_max_size = 8M
 
 ## 配置环境变量
 
-```shell
+```bash
 sudo vim /etc/profile.d/php.sh
 
 # 写入下面内容
@@ -148,7 +151,7 @@ php --version
 
 创建 test 目录
 
-```shell
+```bash
 mkdir ~/test
 ```
 
@@ -165,7 +168,7 @@ mkdir ~/test
 
 因为此时还没有配置 web 服务, 可以用php 内置的先测试一下
 
-```shell
+```bash
 
 # -S 参数就是运行内置的web服务, 后面跟的是 地址:端口号
 # 如果想用80端口就要加上sudo,用root权限执行
@@ -180,38 +183,21 @@ php -S localhost:8888
 
 ## 额外的配置
 
-- readline 扩展
+#### readline 扩展
 
-    `--with-readline` 可以在终端使用 -a(--interactive) 模式，一般只有开发的时候才用得到
+`--with-readline` 可以在终端使用 -a(--interactive) 模式，一般只有开发的时候才用得到。
 
-    安装 `libreadline-dev` (Ubuntu)/`readline-devel` (CentOS) 扩展
-    编译PHP的时候加上 --with-readline 参数
+如果使用此扩展，要先安装依赖
 
+```bash
+# Ubuntu
+sudo apt install libreadline-dev
 
-## 更新记录
+# Fedora
+sudo dnf install readline-devel
 
-#### 2018-01-10
+# CentOS
+sudo yum install readline-devel
+```
 
-添加 bzip2 支持（之前竟然给忘了加了……代码报错才发现）
-
-#### 2017-12-27
-
-更新到当前最新版本 PHP 7.2.0，调整了几个依赖关系和编译参数
-
-#### 2017-09-16
-
-- 更新到当前最新的 PHP 7.1.9
-
-- 修改启动脚本，从 init 脚本改称 systemd 配置
-
-#### 2017-06-11
-
-更新到当前最新的 PHP 7.1.8
-
-#### 2017-06-11
-
-更新到当前最新的 PHP 7.1.6
-
-#### 2017-05-25
-
-更新到当前最新的 PHP 7.1.5
+编译PHP的 configure 阶段加上 --with-readline 参数

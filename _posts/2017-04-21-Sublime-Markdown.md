@@ -9,9 +9,9 @@ tags:
 author: 'Bro Qiang'
 ---
 
-### 安装
+这里只记录 Markdown 相关的插件，Sublime 安装请看 [此处](http://broqiang.com/posts/3)
 
-### MarkdownEditing 安装及配置
+## MarkdownEditing 安装及配置
 
 此插件支持Markdown语法高亮,支持Github Favored Markdown语法,自带3个主题(没有使用)
 
@@ -26,7 +26,7 @@ author: 'Bro Qiang'
     // 将原本的配色模板注释,替换我正在使用的 Material 配色模板
     // "color_scheme": "Packages/MarkdownEditing/MarkdownEditor.tmTheme",
     "color_scheme": "Packages/Material Theme/schemes/Material-Theme.tmTheme",
-    
+
     // 默认显示居中,左侧有大片的空白,看起来很不舒服, 修改下面的配置
     // Layout
     "draw_centered": false, // 设置页面居中, 改为false, 文本内容从左开始显示了
@@ -34,11 +34,11 @@ author: 'Bro Qiang'
     "wrap_width": "auto",   // 每一行自动换行的长度, 默认的80有点短,改成auto, 可以根据屏幕自适应
     "rulers": [],
 }
-    
+
 ```
 
 
-### Markdown Preview 安装配置
+## Markdown Preview 安装配置
 
 此插件是用来对 markdown 文档进行预览
 
@@ -48,7 +48,7 @@ author: 'Bro Qiang'
 
 文档写完之后,使用快捷键 `Ctrl+b` 就可以看效果
 
-配置 
+配置
 
 在 `Markdown Preview - User` 中写入下面内容
 
@@ -73,7 +73,7 @@ author: 'Bro Qiang'
 ```
 
 
-### 为生成 jekyll 头创建snippet
+## 为生成 jekyll 头创建snippet
 
 如果不是通过 jekyll 写做站点,此步骤可以忽略
 
@@ -96,12 +96,3 @@ author: 'Bro Qiang'
     <scope>text.html.markdown</scope>
 </snippet>
 ```
-
-
-### 更新日志
-
-2017-04-21
-
-- 更新标题 - 原本此文档只介绍了 `MarkdownEditing` 一个插件
-
-- 添加 `Markdown Preview` 插件

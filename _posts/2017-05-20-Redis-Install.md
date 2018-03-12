@@ -18,33 +18,33 @@ author: 'Bro Qiang'
 下面介绍的是手动安装，当然也可以通过 apt 或者 yum 安装，就不需要看本文档了
 
 
-```shell
+```bash
 # 下载安装包
-$ wget http://download.redis.io/releases/redis-3.2.8.tar.gz
+wget http://download.redis.io/releases/redis-3.2.8.tar.gz
 
 # 解压到 src 目录
-$ sudo tar xzvf redis-3.2.8.tar.gz -C /usr/local/src/
+sudo tar xzvf redis-3.2.8.tar.gz -C /usr/local/src/
 
 # 进入到解压后的目录
-$ cd /usr/local/src/redis-3.2.8/
+cd /usr/local/src/redis-3.2.8/
 
 # 编译安装 redis 到 /usr/local/redis 目录
-$ sudo make PREFIX=/usr/local/redis install
-
+sudo make PREFIX=/usr/local/redis install
 ```
 
 ## 配置启动脚本
 
-```shell
-$ cd /usr/local/src/redis-3.2.8/utils/
+```bash
+cd /usr/local/src/redis-3.2.8/utils/
 
-$ sudo ./install_server.sh
-
+sudo ./install_server.sh
 ```
 
-配置启动脚本的内容下面的是一个测试的内容，具体的参数，要根据实际情况去配置
+#### 配置启动脚本
 
-```
+下面的内容是一个测试的内容，具体的参数，要根据实际情况去配置
+
+```bash
 Welcome to the redis service installer
 This script will help you easily set up a running redis server
 
@@ -69,21 +69,21 @@ Is this ok? Then press ENTER to go on or Ctrl-C to abort.
 
 ```
 
-启动服务
+#### 启动服务
 
-```shell
-$ sudo /etc/init.d/redis_6379 start
+```bash
+sudo /etc/init.d/redis_6379 start
 
 # 配置开机自动启动
-$ sudo systemctl enable redis_6379
+sudo systemctl enable redis_6379
 ```
 
 
 ## 配置环境变量
 
-```shell
+```bash
 # 创建一个 redis 用的profile文件
-$ sudo vim /etc/profile.d/redis.sh
+sudo vim /etc/profile.d/redis.sh
 
 # 写入下面内容
 export REDIS_HOME=/usr/local/redis
@@ -97,16 +97,18 @@ source /etc/profile.d/redis.sh
 
 此处只介绍几个简单的配置，更多详细配置请去官网查看，具体的参数调整需要配合业务进行优化
 
-```shell
-# 打开我们刚刚生成的配置文件
+ 打开我们刚刚生成的配置文件
+```bash
 $ sudo vim /usr/local/redis/etc/redis.conf
+```
 
-# 可以看到里面有一些默认的配置信息，下面简单介绍几个
+可以看到里面有一些默认的配置信息，下面简单介绍几个
 
+```bash
 # 默认只有本机可以访问
 # 如果想要任何地方都可以访问, 将 127.0.0.1 改成 0.0.0.0
 # 如果只允许私网网段访问，可以设置成 172.16.136.222 (本机的私网地址)
-bind 127.0.0.1 
+bind 127.0.0.1
 
 # 监听端口，默认是6379，根据实际需要去配置
 port 6379
@@ -121,16 +123,19 @@ tcp-keepalive 300
 
 # 默认是否当做一个守护进程执行(也就是当做一个服务去执行)
 daemonize yes
-
 ```
 
 ## 简单测试
 
-```shell
-# 如果环境变量生效了，就可以直接用cli去执行
-$ redis-cli
+如果环境变量生效了，就可以直接用cli去执行，终端下输入下面命令
 
-# 会出现 redis 的命令行窗口，在此处写入命令即可，如下面
+```bash
+redis-cli
+```
+
+会出现 redis 的命令行窗口，在此处写入命令即可，如下面
+
+```bash
 127.0.0.1:6379> set key1 value1
 OK
 127.0.0.1:6379> get key1
