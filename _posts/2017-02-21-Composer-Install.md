@@ -9,30 +9,22 @@ tags:
 author: 'Bro Qiang'
 ---
 
-## PHP包管理工具
+## 获取软件
 
-中文官方: [http://www.phpcomposer.com/](http://www.phpcomposer.com/)
+- [官网下载地址](https://getcomposer.org/download)
 
-网不是很好,下载完最好保留一份
-
-[官网下载地址](https://getcomposer.org/download)
-
-如果下载速度慢的话可以到[我的git仓库 ](https://git.oschina.net/BroQiang/software.git) 下载，不一定是最新的，一般是我正在使用的版本
+- [中文官方](http://www.phpcomposer.com/)
 
 
 ## 安装
 
-```shell
-# 官方下载
-$ wget https://getcomposer.org/download/1.5.2/composer.phar -O composer
+```bash
+# 官方下载,这个连接不一定是最新版本，可以去上面的官网下载地址找到最新版本
+wget https://getcomposer.org/download/1.6.3/composer.phar -O composer
 
-# 我的码云仓库下载
-# $ wget https://git.oschina.net/BroQiang/software/raw/master/composer.phar -O composer
+chmod +x composer
 
-$ chmod +x composer
-
-$ sudo mv composer /usr/local/bin
-
+sudo mv composer /usr/local/bin
 ```
 
 ## 配置国内全镜像
@@ -44,36 +36,38 @@ $ sudo mv composer /usr/local/bin
 
 #### packagist.phpcomposer.com 镜像
 
+[官网](https://www.phpcomposer.com)
+
 - 全局（推荐）
 
-    `composer config -g repo.packagist composer https://packagist.phpcomposer.com`
+```bash
+composer config -g repo.packagist composer https://packagist.phpcomposer.com
+```
 
 - 修改当前项目
 
     **进入到项目根目录**
 
-    `composer config repo.packagist composer https://packagist.phpcomposer.com`
+```bash
+composer config repo.packagist composer https://packagist.phpcomposer.com
+```
 
 #### packagist.laravel-china.org 镜像
 
 [官网](https://laravel-china.org/composer)
 
+> 我一般将这个镜像作为备份，只有当上面的无法使用的时候才会使用此镜像，这两个镜像选择一个即可。
+
 - 全局（推荐）
 
-    `composer config -g repo.packagist composer packagist.laravel-china.org`
+```bash
+composer config -g repo.packagist composer packagist.laravel-china.org
+```
 
 - 修改当前项目
 
     **进入到项目根目录**
 
-    `composer config repo.packagist composer packagist.laravel-china.org`
-
-## 更新日志
-
-#### 2017-09-16
-
-添加 laravel-china 国内镜像
-
-#### 2017-05-25 
-
-Composer 从 1.4.2 更新到 1.5.2
+```bash
+composer config repo.packagist composer packagist.laravel-china.org
+```
