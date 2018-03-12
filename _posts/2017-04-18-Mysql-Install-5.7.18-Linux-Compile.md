@@ -8,35 +8,36 @@ tags:
 author: 'Bro Qiang'
 ---
 
-# Linux 编译安装 Mysql5.7
+此文档支持下面系统，其他发行版本未测试过
 
-次文档适用于 Freora 、CentOS、Ubuntu。
-
-经过安装测试的系统： Fedora26、Fedora27、CentOS7、Ubuntu 16.04、Ubuntu 16.10。
-
-
+- Fedora26
+- Fedora27
+- CentOS7
+- Ubuntu 16.04
+- Ubuntu 16.10
+- Ubuntu 17.10
 
 ## 安装前准备
 
 #### 获取 Mysql
 
-当前的最新版本是 5.7.20 ,有了集成 boost 的版本, 这个比较友善 5.7.17 的时候还要单独去下载 80M 左右的 boost
+当前的最新版本是 5.7.21 ,有了集成 boost 的版本, 这个比较友善 5.7.17 的时候还要单独去下载 80M 左右的 boost
 
-```shell
+```bash
 # 下载源码包
-wget https://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-boost-5.7.20.tar.gz
+wget https://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-boost-5.7.21.tar.gz
 
 # 解压到src
-sudo tar xzvf mysql-boost-5.7.20.tar.gz -C /usr/local/src/
+sudo tar xzvf mysql-boost-5.7.21.tar.gz -C /usr/local/src/
 
 # 修改权限
-sudo chown bro:bro /usr/local/src/mysql-5.7.20
+sudo chown bro:bro /usr/local/src/mysql-5.7.21
 
 ```
 
 #### 安装依赖关系
 
-```shell
+```bash
 # 安装开发工具包, 一般默认就会已经安装了
 sudo apt install -y build-essential cmake libncurses5-dev bison
 
@@ -49,7 +50,7 @@ sudo apt install -y build-essential cmake libncurses5-dev bison
 
 #### 创建守护进程用户
 
-```shell
+```bash
 sudo useradd -M -s /sbin/nologin -r mysql
 ```
 
@@ -57,7 +58,7 @@ sudo useradd -M -s /sbin/nologin -r mysql
 
 __需要注意，如果是 Fedora 或者 CentOS 系统一定要将这个关闭__
 
-```shell
+```bash
 # 永久关闭，需要重启才可以生效
 sudo sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/selinux/config
 # 临时关闭
@@ -68,9 +69,9 @@ setenforce 0
 
 此处只配置了常规参数，更多参数请看 [官方参数说明](https://dev.mysql.com/doc/refman/5.7/en/source-configuration-options.html)
 
-```shell
+```bash
 # 进入到之前解压的源码包目录
-cd /usr/local/src/mysql-5.7.20/
+cd /usr/local/src/mysql-5.7.21/
 
 # 创建编译后的代码保存位置
 sudo mkdir build
@@ -99,7 +100,7 @@ make install
 
 可以配置全局, 也可以配置当前用户, 我一般配置全局, 因为习惯平时使用普通用户, 会和root用户sudo或者su
 
-```shell
+```bash
 # 在 /etc/profile.d 下创建一个mysql用的配置文件
 # 建议不要直接写在/etc/profile 中, 功能上没有区别, 不过配置多了之后可读性差点
 sudo vim /etc/profile.d/mysql.sh
@@ -118,7 +119,7 @@ source /etc/profile.d/mysql.sh
 
 此处选择的第三种方式,个人比较喜欢所有和mysql相关的都放在一个目录下, 方便查找和备份
 
-```shell
+```bash
 # 在mysql根目录下新建一个etc目录
 sudo mkdir /usr/local/mysql/etc
 
@@ -152,7 +153,7 @@ pid-file=/data/mysql/run/mysqld.pid
 - MySQL 5.7.6 之后, 就需要使用  mysqld with the --initialize or --initialize-insecure 初始化
 
 
-```shell
+```bash
 # 创建数据仓库目录,日志目录,PID 目录
 sudo mkdir -p /data/mysql/{data,log,run}
 
@@ -167,7 +168,7 @@ sudo /usr/local/mysql/bin/mysqld --defaults-file=/usr/local/mysql/etc/my.cnf  --
 ## 配置 Mysql 自启动服务
 
 
-```shell
+```bash
 # 复制启动脚本到system目录
 sudo cp /usr/local/mysql/usr/lib/systemd/system/mysqld.service /usr/lib/systemd/system 
 
@@ -232,7 +233,7 @@ mysql> show variables like '%char%';
 
 ## 错误的处理方式
 
-### 阿里云小内存服务器编译 45% 时候报错
+#### 阿里云小内存服务器编译 45% 左右时候报错
 
 错误：
 
@@ -268,19 +269,3 @@ free -m
 以前虚拟机和服务器配置的时候都是4G起步，最近给人做项目，碰到了个奇葩的1核心1G阿里云主机，才出现了这个问题……
 
 不过这样处理后编译的速度会慢一些，硬件配置就这么多的时候也没办法了，享受慢速吧
-
-## 更新日志
-
-#### 2017-12-05
-
-- 更新 Mysql 版本 从 5.7.19 到 5.7.20
-
-- 更新 MySQL 使用 Systemd 管理服务
-
-#### 2017-09-16
-
-更新 Mysql 版本 从 5.7.18 到 5.7.19
-
-#### 2017-05-25 
-
-增加小内存服务器内存不足报错处理方法
