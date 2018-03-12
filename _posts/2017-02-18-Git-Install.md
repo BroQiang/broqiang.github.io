@@ -153,3 +153,32 @@ $ git config --global credential.helper cache
 # 指定临时保存时间
 $ git config credential.helper 'cache --timeout=3600'
 ```
+
+## 别名设置
+
+因为命令会很长，提交频繁的时候很影响工作效率，因此利用Linux的别名特性，给Git创建一些别名，可以根据个人的喜好创建别名。
+
+```shell
+$ vim ~/.bashrc
+# 在默认配置文件中写入下面内容
+# 为了尽量不破坏系统原本配置文件的结构，新建了一个 .bash_alias文件，也可以将别名直接写在下面，效果没有任何区别
+# 为了防止配置错误启动的时候报错，做了个判断
+# 如果家目录下有.bash_alias文件将bash_alias文件引入, .bash_alias可以根据个人喜好随意起名字
+# 为了尽量不破坏系统原本配置文件的结构，
+if [ -f ~/.bash_alias ]; then
+    . ~/.bash_alias
+fi
+
+# 然后新建 ~/.bash_alias文件
+$ vim ~/.bash_alias
+#写入下面内容，此处只是我常用的配置，可以根据个人习惯去配置
+# git
+alias gs='git status'
+alias gaa='git add .'
+alias ga='git add '
+alias gp='git push'
+alias gc='git commit -m '
+alias gl='git log'
+alias grao='git remote add origin '
+alias gpo='git push origin '
+```
